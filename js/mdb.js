@@ -1,6 +1,6 @@
 /*!
  * Material Design for Bootstrap 4
- * Version: MDB FREE: 4.5.15
+ * Version: MDB FREE: 4.6.0
  *
  *
  * Copyright: Material Design for Bootstrap
@@ -15706,3 +15706,25 @@ $('body').on('shown.bs.modal', '.modal', function() {
 $('body').on('hidden.bs.modal', '.modal', function() {
     $('body').removeClass('scrollable');
 });
+"use strict";
+
+(function ($) {
+  $('.input-default-wrapper').on('change', '.input-default-js', function (e) {
+    var $this = $(e.target),
+        $label = $this.next('label'),
+        $files = $this[0].files;
+    var fileName = '';
+
+    if ($files && $files.length > 1) {
+      fileName = ($this.attr('data-multiple-target') || '').replace('{target}', $files.length);
+    } else if (e.target.value) {
+      fileName = e.target.value.split('\\').pop();
+    }
+
+    if (fileName) {
+      $label.find('.span-choose-file').html(fileName);
+    } else {
+      $label.html($label.html());
+    }
+  });
+})(jQuery);

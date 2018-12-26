@@ -101,3 +101,13 @@ body{
 .contact-form-container{
   margin: 0 auto;
 }
+
+.offers{
+  background-color: #f1f1f2;
+  width: 100%;
+  margin: 5em 0em;
+  padding: 3em 0em;
+}
+.offers-text{
+  margin-top: 2em;
+}
