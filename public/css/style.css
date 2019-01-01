@@ -111,3 +111,10 @@ body{
 .offers-text{
   margin-top: 2em;
 }
+.banquet-page-head{
+  background: linear-gradient(to right, #8576c7, #aaa0d3)
+}
+.banquet-head-carousel{
+  padding-top: 3em;
+  padding-bottom: 3em;
+}

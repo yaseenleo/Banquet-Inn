@@ -17,43 +17,44 @@ signUpBtn.addEventListener('click', () => {
   let phone = document.getElementById("phonenum").value;
 
   var gender = document.getElementsByName("gender");
-for (var i = 0; i < gender.length; i++) {
+  for (var i = 0; i < gender.length; i++) {
     if (gender[i].checked) {
-        console.log("radioButton " + i + ": " + gender[i].value);
-        gender = gender[i].value;
-        console.log(gender)
-      }
-}
- 
+      console.log("radioButton " + i + ": " + gender[i].value);
+      gender = gender[i].value;
+      console.log(gender)
+    }
+  }
+
   firebase.auth()
-  .createUserWithEmailAndPassword(email, password)
-  .then((success) => {
+    .createUserWithEmailAndPassword(email, password)
+    .then((success) => {
       let userObj = {
-          name,
-          email,
-          password,
-          phone,
-          gender
-        }
+        name,
+        email,
+        password,
+        phone,
+        gender
+      }
       let userUid = firebase.auth().currentUser.uid
       firebase.database().ref('users/' + userUid)
-          .set(userObj)
-          .then(() => {
-              alert(`Congradulation Your Account is Created ${name}`);
-              window.location.assign("signin.html")
-          })
-          console.log(success, "success");
+        .set(userObj)
+        .then(() => {
+          $("signUpModal").modal(show)
+          alert(`Congradulation Your Account is Created ${name}`);
+          window.location.assign("signin.html")
+        })
+      console.log(success, "success");
 
-  })
-  .catch((error) => {
+    })
+    .catch((error) => {
       // Handle Errors here.
       var errorCode = error.code;
       var errorMessage = error.message;
       console.log(errorCode);
       console.log(errorMessage);
-      
+
       // ...
-  });
+    });
 })
 // firebase.auth().sendSignInLinkToEmail(email, actionCodeSettings)
 // .then(function () {

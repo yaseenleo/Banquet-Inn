@@ -41,13 +41,13 @@ logOut.addEventListener('click', () => {
 
         console.log(success, "Log Out Success")
 
-            .catch(function (erroe) {
-                var errorCode = error.code;
-                var errorMessage = error.message;
-                // ...
+    })
+    .catch(function (erroe) {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // ...
 
-                console.log(errorCode);
-                console.log(errorMessage);
-            })
-    });
+        console.log(errorCode);
+        console.log(errorMessage);
+    })
 })

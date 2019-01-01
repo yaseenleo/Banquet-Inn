@@ -4,11 +4,11 @@ const app = express();
 const nodemailer = require("nodemailer");
 const bodyParser = require("body-parser");
 let transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
+    host: 'smtp.yahoo.com',
     port: 587,
     secure: false, // true for 465, false for other ports
     auth: {
-        user: "mohammadyaseen223@gmail.com", // generated ethereal user
+        user: "leo.yaseen@yahoo.com", // generated ethereal user
         pass: "samsang123456789" // generated ethereal password
     },
     tls:{
@@ -30,8 +30,8 @@ app.post("/send_mail",(req,res)=>{
         console.log("email",email);
 
         var mailOptions = {
-            from: "Banquet Inn <mohammadyaseen223@gmail.com>",
-            to: "mohammadyaseen223@gmail.com", // riazkhan@abbasaliandsons.com
+            from: "Banquet Inn <leo.yaseen@yahoo.com>",
+            to: "leo.yaseen@yahoo.com", // riazkhan@abbasaliandsons.com
             subject: subject,
             html: `<h1>${name}:${email}</h1>
             <p>${message}</p>
