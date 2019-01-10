@@ -9,10 +9,10 @@ var config = {
 };
 firebase.initializeApp(config);
 
-firebase.auth().onAuthStateChanged(function (user) {
+firebase.auth().onAuthStateChanged( (user) => {
     if (user) {
         // User is signed in.
-        var displayName = user.name;
+        var displayName = user.displayName;
         var email = user.email;
         var emailVerified = user.emailVerified;
         var photoURL = user.photoURL;
@@ -28,9 +28,15 @@ firebase.auth().onAuthStateChanged(function (user) {
         console.log(isAnonymous);
         console.log(uid);
         console.log(providerData);
+
+        document.getElementById("logout").style.display = "block";
+
+
     } else {
         // User is signed out.
         // ...
+        document.getElementById("logout").style.display = "none";
+
     }
 });
 

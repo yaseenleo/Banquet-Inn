@@ -7,9 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Banquet Home</title>
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
         crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Bootstrap core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <!-- Material Design Bootstrap -->
@@ -70,10 +70,10 @@
 
             <ul class="navbar-nav md-auto">
                 <li class="nav-item">
-                    <a href="pages/login/signUp.html" class="nav-link">Sign Up</a>
+                    <a href="login/signUp.html" class="nav-link">Sign Up</a>
                 </li>
                 <li class="nav-item">
-                    <a href="pages/login/signIn.html" class="nav-link">Sign In</a>
+                    <a href="login/signIn.html" class="nav-link">Sign In</a>
                 </li>
                 <li class="nav-item">
                     <a href="" class="nav-link" id="logout">Log Out</a>
@@ -86,9 +86,9 @@
     </nav>
     <!--/.Navbar-->
 
-    <div class="container-fluid">
+    <div class="container-fluid animated fadeIn">
         <div class="container">
-            <div class="banq-name">
+            <div class="banq-name animated rubberBand">
                 <h1 class="text-center" id="banq-name">Banquet Name</h1>
             </div>
 
@@ -127,7 +127,7 @@
 
     <!-- banquet info -->
 
-    <div class="container-fluid">
+    <div class="container-fluid animated fadeIn">
         <div class="container">
             <div class="banquet-detail">
                 <div class="banquet-detail-text">
@@ -136,7 +136,7 @@
 
                 <div class="row">
 
-                    <div class="col-sm-4 col-md-4 col-lg-4">
+                    <div class=" col-md-4 col-lg-4">
                         <div class="banq-about">
                             <h4>About</h4>
                             <p id="banq-about">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat saepe
@@ -146,7 +146,7 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-4 col-md-4 col-lg-4">
+                    <div class=" col-md-4 col-lg-4">
                         <div class="banq-overview">
                             <h4>Overview</h4>
 
@@ -162,7 +162,7 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-4 col-md-4 col-lg-4">
+                    <div class=" col-md-4 col-lg-4">
                         <div class="banq-map">
                             <h4>Map</h4>
 
@@ -181,20 +181,23 @@
         </div>
     </div>
     <div>
-        <div class="container-fluid">
+        <div class="container-fluid animated fadeIn">
             <div class="container banq-services">
-                <div class="banq-services-text">
-                    <h1>Amenities &amp; Services</h1>
-                </div>
-                <div class="banq-service-list">
+
+                <div class="banq-service">
                     <div class="row">
                         <div class="col-sm-6 col-md-6 ">
+                            <div class="">
+                                <h1>Amenities &amp; Services</h1>
+                            </div>
                             <div id="banq-service-list">
-
                             </div>
                         </div>
 
                         <div class="col-sm-6 col-md-6">
+                            <div class="">
+                                <h1>Contact Us</h1>
+                            </div>
                             <div class="banq-contact">
                                 <p>name: <span id="name">Name of responsible person</span></p>
                                 <p>Contact: <span id="phone">Phone Number</span></p>
@@ -204,13 +207,46 @@
                 </div>
             </div>
 
-            <div class="container">
-                <div class="banq-booking">
-                    <div class="banq-booking-form">
-                        <div class="row">
-                            <div class="col-sm-6 col-md-6">
+            <div class="verticle-line-breaker">
+
+            </div>
+
+            <div class="booking-form text-center animated fadeIn">
+                <div class="">
+                    <h2>Book now your event</h2>
+                    <p class="text-muted">click the below button to book your event</p>
+                </div>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#centralModalSuccess">Book
+                    Now</button>
+            </div>
+
+
+            <!-- Central Modal Medium Success -->
+            <div class="modal fade" id="centralModalSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-notify modal-lg modal-primary " role="document">
+                    <!--Content-->
+                    <div class="modal-content">
+                        <!--Header-->
+                        <div class="modal-header">
+                            <div class="modal-head-center">
+                                <p class="heading lead">Booking Form</p>
+                            </div>
+
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true" class="white-text">&times;</span>
+                            </button>
+                        </div>
+
+                        <!--Body-->
+                        <div class="modal-body">
+                            <div class="text-center">
+                                <i class="far fa-file-alt fa-4x mb-3 animated rotateIn"></i>
+                            </div>
+
+                            <div class="container modalBookingForm">
                                 <div class="row">
-                                    <div class="col-sm-10">
+                                    <div class="col-sm-12">
                                         <div class="md-form">
                                             <input type="text" id="username" class="form-control">
                                             <label for="username">Enter Your Name</label>
@@ -219,7 +255,7 @@
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-sm-10">
+                                    <div class="col-sm-12">
                                         <div class="md-form">
                                             <input type="text" id="useremail" class="form-control">
                                             <label for="useremail">Enter Your Email Address</label>
@@ -228,7 +264,7 @@
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-sm-10">
+                                    <div class="col-sm-12">
                                         <div class="md-form">
                                             <input type="text" id="userphone" class="form-control">
                                             <label for="userphone">Enter Your Phone No.</label>
@@ -236,13 +272,8 @@
                                     </div>
                                 </div>
 
-
-
-                            </div>
-
-                            <div class="col-sm-6 col-md-6">
                                 <div class="row">
-                                    <div class="col-sm-10">
+                                    <div class="col-sm-12">
                                         <div class="md-form">
                                             <div class="row">
                                                 <div class="col-3">
@@ -257,7 +288,7 @@
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-sm-10">
+                                    <div class="col-sm-12">
                                         <div class="row">
                                             <div class="col-3">
                                                 <label for="">Timing:</label>
@@ -284,7 +315,7 @@
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-sm-10">
+                                    <div class="col-sm-12">
                                         <div class="row">
                                             <div class="col-3">
                                                 <div class="md-form">
@@ -300,116 +331,173 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-10 text-center">
-                                        <button class="btn btn-success">Reserve</button>
-                                    </div>
-                                </div>
                             </div>
                         </div>
+
+                        <!--Footer-->
+                        <div class="modal-footer justify-content-center">
+                            <a type="button" class="btn btn-primary">Send <i class="fa fa-paper-plane ml-1"></i></a>
+                            <a type="button" class="btn btn-outline-primary waves-effect" data-dismiss="modal">No,
+                                thanks</a>
+                        </div>
                     </div>
+                    <!--/.Content-->
                 </div>
             </div>
-        </div>
-    </div>
-
-
-
-    <!-- Footer Links -->
-    <div class="container text-center text-md-left mt-5">
-
-        <!-- Grid row -->
-        <div class="row mt-3">
-
-            <!-- Grid column -->
-            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-
-                <!-- Content -->
-                <h6 class="text-uppercase font-weight-bold">Banquet Inn</h6>
-                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-                <p>Banquet Inn is a marraige organizing website were you can find all you need to organize a maariage
-                    ceremony right before your door step</p>
-
-            </div>
-            <!-- Grid column -->
-
-            <!-- Grid column -->
-            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-
-                <!-- Links -->
-                <h6 class="text-uppercase font-weight-bold">Products</h6>
-                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-                <p>
-                    <a href="#!">Banquet</a>
-                </p>
-                <p>
-                    <a href="#!">Catering</a>
-                </p>
-                <p>
-                    <a href="#!">Transport</a>
-                </p>
-
-            </div>
-            <!-- Grid column -->
-
-            <!-- Grid column -->
-            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-
-                <!-- Links -->
-                <h6 class="text-uppercase font-weight-bold">Useful links</h6>
-                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-                <p>
-                    <a href="#!">Your Account</a>
-                </p>
-                <p>
-                    <a href="#!">Become an Affiliate</a>
-                </p>
-                <p>
-                    <a href="#!">Shipping Rates</a>
-                </p>
-                <p>
-                    <a href="#!">Help</a>
-                </p>
-
-            </div>
-            <!-- Grid column -->
-
-            <!-- Grid column -->
-            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-
-                <!-- Links -->
-                <h6 class="text-uppercase font-weight-bold">Contact</h6>
-                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-                <p>
-                    <i class="fa fa-home mr-3"></i> New York, NY 10012, US</p>
-                <p>
-                    <i class="fa fa-envelope mr-3"></i> info@example.com</p>
-                <p>
-                    <i class="fa fa-phone mr-3"></i> + 01 234 567 88</p>
-                <p>
-                    <i class="fa fa-print mr-3"></i> + 01 234 567 89</p>
-
-            </div>
-            <!-- Grid column -->
+            <!-- Central Modal Medium Success-->
 
         </div>
-        <!-- Grid row -->
-
     </div>
-    <!-- Footer Links -->
 
-    <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">© 2018 Copyright:
-        <a href="https://mdbootstrap.com/bootstrap-tutorial/"> Banquet Inn</a>
-    </div>
-    <!-- Copyright -->
+
+
+    <!-- Footer -->
+    <footer class="page-footer font-small unique-color-dark animated fadeIn">
+
+        <div style="background-color: #6351ce;">
+            <div class="container">
+
+                <!-- Grid row-->
+                <div class="row py-4 d-flex align-items-center">
+
+                    <!-- Grid column -->
+                    <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+                        <h6 class="mb-0">Get connected with us on social networks!</h6>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-6 col-lg-7 text-center text-md-right">
+
+                        <!-- Facebook -->
+                        <a class="fb-ic">
+                            <i class="fa fa-facebook white-text mr-4"> </i>
+                        </a>
+                        <!-- Twitter -->
+                        <a class="tw-ic">
+                            <i class="fa fa-twitter white-text mr-4"> </i>
+                        </a>
+                        <!-- Google +-->
+                        <a class="gplus-ic">
+                            <i class="fa fa-google-plus white-text mr-4"> </i>
+                        </a>
+                        <!--Linkedin -->
+                        <a class="li-ic">
+                            <i class="fa fa-linkedin white-text mr-4"> </i>
+                        </a>
+                        <!--Instagram-->
+                        <a class="ins-ic">
+                            <i class="fa fa-instagram white-text"> </i>
+                        </a>
+
+                    </div>
+                    <!-- Grid column -->
+
+                </div>
+                <!-- Grid row-->
+
+            </div>
+        </div>
+
+        <!-- Footer Links -->
+        <div class="container text-center text-md-left mt-5">
+
+            <!-- Grid row -->
+            <div class="row mt-3">
+
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+
+                    <!-- Content -->
+                    <h6 class="text-uppercase font-weight-bold">Banquet Inn</h6>
+                    <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p>Banquet Inn is a marraige organizing website were you can find all you need to organize a
+                        maariage
+                        ceremony right before your door step</p>
+
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+
+                    <!-- Links -->
+                    <h6 class="text-uppercase font-weight-bold">Products</h6>
+                    <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p>
+                        <a href="#!">Banquet</a>
+                    </p>
+                    <p>
+                        <a href="#!">Catering</a>
+                    </p>
+                    <p>
+                        <a href="#!">Transport</a>
+                    </p>
+
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+
+                    <!-- Links -->
+                    <h6 class="text-uppercase font-weight-bold">Useful links</h6>
+                    <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p>
+                        <a href="#!">Your Account</a>
+                    </p>
+                    <p>
+                        <a href="#!">Become an Affiliate</a>
+                    </p>
+                    <p>
+                        <a href="#!">Shipping Rates</a>
+                    </p>
+                    <p>
+                        <a href="#!">Help</a>
+                    </p>
+
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+                    <!-- Links -->
+                    <h6 class="text-uppercase font-weight-bold">Contact</h6>
+                    <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p>
+                        <i class="fa fa-home mr-3"></i> New York, NY 10012, US</p>
+                    <p>
+                        <i class="fa fa-envelope mr-3"></i> info@example.com</p>
+                    <p>
+                        <i class="fa fa-phone mr-3"></i> + 01 234 567 88</p>
+                    <p>
+                        <i class="fa fa-print mr-3"></i> + 01 234 567 89</p>
+
+                </div>
+                <!-- Grid column -->
+
+            </div>
+            <!-- Grid row -->
+
+        </div>
+        <!-- Footer Links -->
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2018 Copyright:
+            <a href="https://mdbootstrap.com/bootstrap-tutorial/"> Banquet Inn</a>
+        </div>
+        <!-- Copyright -->
 
     </footer>
     <!-- Footer -->
 </body>
 <!-- SCRIPTS -->
+<!-- firebase -->
+<script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
 <!-- JavaScript -->
 <script src="../js/app.js" type="text/javascript"></script>
+<script src="../js/custom-js/auth.js"></script>
 <!-- JQuery -->
 <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
 <!-- Bootstrap tooltips -->
@@ -418,6 +506,5 @@
 <script type="text/javascript" src="../js/bootstrap.min.js"></script>
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="../js/mdb.min.js"></script>
-<script src="../js/custom-js/auth.js"></script>
 
 </html>

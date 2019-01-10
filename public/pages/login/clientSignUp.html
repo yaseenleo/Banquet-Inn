@@ -64,7 +64,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="../contact.html">Contact Us</a>
                 </li>
-                
+
             </ul>
             <!-- Links -->
 
@@ -113,24 +113,29 @@
                                     <div class="form-bottom">
                                         <!-- <form class="login-form" action="#"> -->
                                         <div class="form-group">
-                                            <label class="sr-only">Full Name</label>
-                                            <input type="text" name="fullname" placeholder="Full Name..." class="form-control"
-                                                id="fullname" required>
+                                            <label class="sr-only">First Name</label>
+                                            <input type="text" name="firstname" placeholder="First Name..." class="form-control"
+                                                id="firstname" required autofocus>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="sr-only">Last Name</label>
+                                            <input type="text" name="lastname" placeholder="Last Name..." class="form-control"
+                                                id="lastname" required>
                                         </div>
                                         <div class="form-group">
                                             <label class="sr-only">Email</label>
-                                            <input type="email" name="email" placeholder="Email..." class="form-control"
-                                                id="email" required>
+                                            <input type="email" name="c-email" placeholder="Email..." class="form-control"
+                                                id="c-email" required>
                                         </div>
                                         <div class="form-group">
                                             <label class="sr-only">Password</label>
-                                            <input type="password" name="password" placeholder="Password..." class="form-control"
-                                                id="password" required>
+                                            <input type="password" name="c-password" placeholder="Password..." class="form-control"
+                                                id="c-password" required>
                                         </div>
                                         <div class="form-group">
                                             <label class="sr-only">Phone Number</label>
-                                            <input type="text" name="phonenum" placeholder="Phone Number..." class="form-control"
-                                                id="phonenum">
+                                            <input type="text" name="c-phonenum" placeholder="Phone Number..." class="form-control"
+                                                id="c-phonenum">
                                         </div>
                                         <div class="form-group">
                                             <div class="row">
@@ -139,16 +144,16 @@
                                                 </div>
                                                 <div class="col-10">
                                                     <div class="custom-control custom-radio custom-control-inline">
-                                                        <input type="radio" id="male" name="gender" class="custom-control-input"
+                                                        <input type="radio" id="c-male" name="c-gender" class="custom-control-input"
                                                             value="male">
-                                                        <label class="custom-control-label" for="male">Male</label>
+                                                        <label class="custom-control-label" for="c-male">Male</label>
 
                                                     </div>
 
                                                     <div class="custom-control custom-radio custom-control-inline">
-                                                        <input type="radio" id="female" name="gender" class="custom-control-input"
+                                                        <input type="radio" id="c-female" name="c-gender" class="custom-control-input"
                                                             value="female">
-                                                        <label class="custom-control-label" for="female">Female</label>
+                                                        <label class="custom-control-label" for="c-female">Female</label>
 
                                                     </div>
                                                 </div>
@@ -156,26 +161,13 @@
 
                                         </div>
                                         <div class="text-center">
-                                            <button type="submit" class="btn" onclick="signUp()">Sign Up</button>
+                                            <button type="submit" class="btn" onclick="clientSignUp()">Sign up</button>
                                         </div>
                                         <!-- </form> -->
                                         <div class="text-center signup-info">
-                                            <label for="" class="form-contorl-label">If you own a Business <a href="clientSignUp.html">Click
+                                            <label for="" class="form-contorl-label">If you are a user <a href="signUp.html">Click
                                                     Here</a></label>
                                         </div>
-                                    </div>
-                                </div>
-
-                                <div class="social-login">
-                                    <h3>...or Sign up with:</h3>
-                                    <div class="social-login-buttons">
-                                        <a class="btn btn-link-1 btn-link-1-facebook" href="#">
-                                            <i class="fa fa-facebook"></i> Facebook
-                                        </a>
-
-                                        <a class="btn btn-link-1 btn-link-1-google-plus" href="#">
-                                            <i class="fa fa-google-plus"></i> Google Plus
-                                        </a>
                                     </div>
                                 </div>
 
@@ -188,6 +180,38 @@
 
             </div>
         </div>
+
+        <!-- Central Modal Medium Info -->
+        <div class="modal fade" id="clientSignUpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-notify modal-info" role="document">
+                <!--Content-->
+                <div class="modal-content">
+                    <!--Header-->
+                    <div class="modal-header">
+                        <p class="heading lead"></p>
+
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true" class="white-text">&times;</span>
+                        </button>
+                    </div>
+
+                    <!--Body-->
+                    <div class="modal-body">
+                        <div class="text-center">
+                            <i class="fas fa-check fa-4x mb-3 animated rotateIn"></i>
+                            <p>Congradulation you are a step closer to publish your business</p>
+                        </div>
+                    </div>
+
+                    <!--Footer-->
+                    <div class="modal-footer justify-content-center">
+                        <a type="button" class="btn btn-primary waves-effect" data-dismiss="modal">Proceed <i class="far fa-gem ml-1 text-white"></i></a>
+                    </div>
+                </div>
+                <!--/.Content-->
+            </div>
+        </div>
+        <!-- Central Modal Medium Info-->
 
     </div>
 
@@ -341,7 +365,6 @@
 <!-- <script src="../../js/app.js"></script> -->
 <script src="../../js/custom-js/signup.js"></script>
 <script src="../../js/custom-js/auth.js"></script>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <!-- JQuery -->
 <script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
 <!-- Bootstrap tooltips -->

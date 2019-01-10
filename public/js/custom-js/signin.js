@@ -1,13 +1,13 @@
-// Initialize Firebase
-var config = {
-    apiKey: "AIzaSyBKqnOx3whVTOPnoc6K9AbS51nK0nUIcnY",
-    authDomain: "banquet-inn.firebaseapp.com",
-    databaseURL: "https://banquet-inn.firebaseio.com",
-    projectId: "banquet-inn",
-    storageBucket: "",
-    messagingSenderId: "84905194109"
-  };
-  firebase.initializeApp(config);
+// // Initialize Firebase
+// var config = {
+//     apiKey: "AIzaSyBKqnOx3whVTOPnoc6K9AbS51nK0nUIcnY",
+//     authDomain: "banquet-inn.firebaseapp.com",
+//     databaseURL: "https://banquet-inn.firebaseio.com",
+//     projectId: "banquet-inn",
+//     storageBucket: "",
+//     messagingSenderId: "84905194109"
+//   };
+//   firebase.initializeApp(config);
 
   let signIn = document.getElementById("signin");
   signIn.addEventListener('click' ,() =>{
@@ -18,8 +18,15 @@ var config = {
     .signInWithEmailAndPassword(email, password)
     .then((success) =>{
       console.log(success, "success");
-      alert("You are successfully loged in");
-      window.location.assign("../../index.html")
+      swal({
+        title: "Congradulation!",
+        text: "You have successfully Loged In",
+        icon: "success",
+        button: "Done",
+      }).then(() => {
+        window.location.assign("../banquetpage.html")
+
+      })
     })
     .catch(function(error) {
       // Handle Errors here.
@@ -29,5 +36,13 @@ var config = {
 
       console.log(errorCode);
       console.log(errorMessage);
+
+      swal({
+        title: "Log In Failed",
+        text: errorMessage,
+        icon: "error",
+        button: "Ok",
+    });
+
     });
   })

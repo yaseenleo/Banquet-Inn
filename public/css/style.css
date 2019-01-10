@@ -118,3 +118,50 @@ body{
   padding-top: 3em;
   padding-bottom: 3em;
 }
+/* Banquet page */
+
+.banq-name{
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+.banquet-detail{
+  display: block;
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin-top: 4em;
+  margin-bottom: 4em;
+}
+.banq-booking{
+  border: 1px solid rgb(80, 78, 78);
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 1em;
+  margin-bottom: 1em
+}
+.banquet-detail-text{
+  margin-bottom: 2em;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+.modalBookingForm{
+  margin: 0 auto;
+}
+.modal-head-center{
+  margin: 0 auto;
+  margin-left: 20em;
+}
+.verticle-line-breaker{
+  border-top: 1px solid rgb(56, 54, 54);
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+.booking-form  h2 {
+  font-size: 2.5em;
+  text-transform: capitalize;
+}
+.booking-form{
+  margin-bottom: 2em;
+}

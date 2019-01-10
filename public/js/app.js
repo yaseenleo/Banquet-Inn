@@ -1,5 +1,6 @@
 // Animations init
-new WOW().init();
+// new WOW().init();
+// $( ".wow" ).addClass( "fadeInUp" );
 
 // Login
 $("#signup").click(function() {
