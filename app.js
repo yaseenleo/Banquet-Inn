@@ -21,6 +21,36 @@ app.use(bodyParser.urlencoded({
     extended: false
 }));
 app.use(bodyParser.json());
+app.get("/",(req,res)=>{
+        res.sendFile(path.join(__dirname,"/public/index.html"));
+});
+// app.get("/:page",(req,res)=>{
+// let page = req.params.page;
+// res.sendFile(path.join(__dirname,"/public/pages/"+page+".html"));
+// })
+app.get("/contact",(req,res)=>{
+    res.sendFile(path.join(__dirname,"/public/pages/contact.html"));
+});
+app.get("/signup",(req,res)=>{
+    res.sendFile(path.join(__dirname,"/public/pages/login/signup.html"));
+});
+app.get("/home",(req,res)=>{
+    res.sendFile(path.join(__dirname,"/public/pages/home.html"));
+})
+app.get("/banquet/:id",(req,res)=>{
+    res.sendFile(path.join(__dirname,"/public/pages/banquetpage.html"))
+})
+// app.get("/user/:id",(req,res)=>{
+// let id = req.params.id;
+// res.send(id);
+// })
+app.get("/signin",(req, res)=>{
+res.sendFile(path.join(__dirname,"/public","/pages","/login","/signin.html"))
+});
+app.get("/banquetdetail",(req, res)=>{
+    res.sendFile(path.join(__dirname,"/public/pages/banquetdetail.html"))
+})
+
 app.post("/send_mail",(req,res)=>{
     let name = req.body.name,
         email = req.body.email,
