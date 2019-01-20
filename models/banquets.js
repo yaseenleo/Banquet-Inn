@@ -6,7 +6,14 @@ var mongoose = require('mongoose');
     about: String,
     services:   String,
     email:   String,
-    department : String
+    phone : String,
+    address : String,
+    owner: String,
+    username:String,
+    password :String,
+    reservations:String,
+    applications:String,
+    quantity:Number,
 
 
   });

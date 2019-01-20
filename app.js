@@ -4,6 +4,7 @@ const path = require("path");
 const app = express();
 const nodemailer = require("nodemailer");
 const bodyParser = require("body-parser");
+const Banquets = require('./models/banquets');
 let transporter = nodemailer.createTransport({
     host: 'smtp.yahoo.com',
     port: 587,
@@ -42,8 +43,37 @@ app.get("/contact",(req,res)=>{
     res.sendFile(path.join(__dirname,"/public/pages/contact.html"));
 });
 app.get("/signup",(req,res)=>{
-    res.sendFile(path.join(__dirname,"/public/pages/login/signup.html"));
+    // changes by ahmed
+ //   res.sendFile(path.join(__dirname,"/public/pages/login/signup.html"));
+ res.sendFile(path.join(__dirname, "/public/pages/login/clientSignUp.html"))
+
 });
+// changes by ahmed
+app.post('/signup',(req,res)=>{
+    let name = req.body.name,
+    about = req.body.about,
+    quantity= req.body.quantity,
+    services =   req.body.services,
+    email = req.body.email,
+    phone = req.body.phone,
+    address = req.body.address,
+    owner = req.body.owner,
+    username = req.body.username,
+    password = req.body.password,
+    reservations = JSON.stringify([]),
+    applications = JSON.stringify([]);
+    new Banquets({name,about,services,email,phone,address,owner,username,password,quantity,reservations,applications}).save((banquet)=>{
+        console.log(banquet);
+        res.redirect('/');
+    })
+
+})
+app.get('/get_banquets',(req,res)=>{
+    Banquets.find({},(err,banquets)=>{
+        res.json({banquets:banquets});
+        res.end();
+    })
+})
 app.get("/specialsignup",(req, res)=>{
     res.sendFile(path.join(__dirname, "/public/pages/login/clientSignUp.html"))
 })

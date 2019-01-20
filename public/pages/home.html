@@ -217,14 +217,47 @@
         });
 
     });
-    firebase.database().ref('/clientUsers').on('value', (snapshot) => {
-        banqs = snapshot.val();
-        console.log('type of', typeof banqs);
-        let banq_list = document.getElementById('banq-list');
-        let str = ``;
-        console.log('banq details', banqs);
-        for (banq in banqs) {
-            str +=
+    // firebase.database().ref('/clientUsers').on('value', (snapshot) => {
+    //     banqs = snapshot.val();
+    //     console.log('type of', typeof banqs);
+    //     let banq_list = document.getElementById('banq-list');
+    //     let str = ``;
+    //     console.log('banq details', banqs);
+    //     for (banq in banqs) {
+    //         str +=
+    //             `
+    //                         <div class="card banq-card">
+    //                           <div class="row ">
+    //                             <div class="col-md-4">
+    //                                 <img src="https://placeholdit.imgix.net/~text?txtsize=38&txt=400%C3%97400&w=400&h=400" class="w-100 img-fluid">
+    //                               </div>
+    //                               <div class="col-md-8 px-3">
+    //                                 <div class="card-block px-3">
+    //                                   <h4 class="card-title">${banqs[banq].banqName}</h4>
+    //                                   <p class="card-text">  ${banqs[banq].about} </p>
+    //                                   <a href="#" class="btn btn-primary">Read More</a>
+    //                                 </div>
+    //                               </div>
+                        
+    //                             </div>
+    //                           </div>
+    //                         `
+    //     };
+    //     banq_list.innerHTML = str;
+   // })
+    function fetch_banquets(){
+        let xhttp = new XMLHttpRequest();
+        xhttp.open('GET','/get_banquets',true);
+        xhttp.send();
+        xhttp.onreadystatechange = function(){
+            if(this.readyState == 4 && this.status == 200){
+                console.log(this.responseText);
+                banqs = JSON.parse(this.responseText).banquets;
+                let banq_list = document.getElementById('banq-list');
+                 let str = ``;
+                 console.log('banq details', banqs);
+                 banqs.forEach((banq)=>{
+                      str +=
                 `
                             <div class="card banq-card">
                               <div class="row ">
@@ -233,8 +266,8 @@
                                   </div>
                                   <div class="col-md-8 px-3">
                                     <div class="card-block px-3">
-                                      <h4 class="card-title">${banqs[banq].banqName}</h4>
-                                      <p class="card-text">  ${banqs[banq].about} </p>
+                                      <h4 class="card-title">${banq.name}</h4>
+                                      <p class="card-text">  ${banq.about} </p>
                                       <a href="#" class="btn btn-primary">Read More</a>
                                     </div>
                                   </div>
@@ -242,9 +275,12 @@
                                 </div>
                               </div>
                             `
-        };
+        });
         banq_list.innerHTML = str;
-    })
+            }
+        }
+    }
+    fetch_banquets();
 </script>
 
 </html>
