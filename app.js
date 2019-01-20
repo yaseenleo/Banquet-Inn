@@ -79,9 +79,37 @@ app.post('/signup',(req,res)=>{
     })
 
 })
+app.get('/delete_application/:id/:date',(req,res)=>{
+    let id= req.params.id ;
+    let date = req.params.date;
+    Banquets.findById(id,(err,banquet)=>{
+        let index = -1;
+        let applications = JSON.parse(banquet.applications);
+        applications.forEach((application ,i)=>{
+            if(application.date === date)
+            {
+                index = i
+            }
+        })
+        applications.splice(index,1);
+        banquet.applications = JSON.stringify(applications);
+        banquet.save(()=>{
+            res.redirect('/banquet_info');
+        })
+        
+    })
+    console.log(date);
+})
 app.get('/get_banquets',(req,res)=>{
     Banquets.find({},(err,banquets)=>{
         res.json({banquets:banquets});
+        res.end();
+    })
+})
+app.get('/get_banquet',(req,res)=>{
+    let banq = JSON.parse(req.cookies.banquet);
+    Banquets.findOne({_id:banq._id},(err,banquet)=>{
+        res.json({banquet:banquet});
         res.end();
     })
 })

@@ -101,7 +101,7 @@
         <a class="nav-link active" href="#profile" role="tab" data-toggle="tab">Reserved List</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#buzz" role="tab" data-toggle="tab">Reservation List</a>
+        <a class="nav-link" href="#buzz" role="tab" data-toggle="tab">Application List</a>
       </li>
     </ul>
   
@@ -181,174 +181,31 @@
                         </th>
                         <th class="th-sm">Date
                         </th>
+                        <th class="th-sm">Capacity
+                            </th>
+                        <th class="th-sm">Booking Price
+                            </th>
                         <th class="th-sm">Action
                         </th>
                         <th class="th-sm">Cancel
                         </th>
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr>
-                        <td>Tiger Nixon</td>
-                        <td>abc@gmail.com</td>
-                        <td>0344-1234567</td>
-                        <td>2011/04/25</td>
-                        <td class="text-center"><button class="btn btn-primary btn-sm reserve-del-btn mx-auto" data-toggle="modal" data-target="#reserveModalSuccess">Reserve</button></td>
-                        <td class="text-center"><button class="btn btn-danger btn-sm reserve-del-btn mx-auto" onclick="reserveDel()">Delete</button></td>
-                      </tr>
-                      <tr>
-                        <td>Garrett Winters</td>
-                        <td>abc@gmail.com</td>
-                        <td>0344-1234567</td>
-                        <td>2011/04/25</td>
-                        <td class="text-center"><button class="btn btn-primary btn-sm reserve-del-btn mx-auto" data-toggle="modal" data-target="#reserveModalSuccess">Reserve</button></td>
-                        <td class="text-center"><button class="btn btn-danger btn-sm reserve-del-btn mx-auto" onclick="reserveDel()">Delete</button></td>
-                      </tr>
-                      <tr>
-                        <td>Ashton Cox</td>
-                        <td>abc@gmail.com</td>
-                        <td>0344-1234567</td>
-                        <td>2011/04/25</td>
-                        <td class="text-center"><button class="btn btn-primary btn-sm reserve-del-btn mx-auto" data-toggle="modal" data-target="#reserveModalSuccess">Reserve</button></td>
-                        <td class="text-center"><button class="btn btn-danger btn-sm reserve-del-btn mx-auto" onclick="reserveDel()">Delete</button></td>
-                      </tr>
-                      <tr>
-                        <td>Cedric Kelly</td>
-                        <td>abc@gmail.com</td>
-                        <td>0344-1234567</td>
-                        <td>2011/04/25</td>
-                        <td class="text-center"><button class="btn btn-primary btn-sm reserve-del-btn mx-auto" data-toggle="modal" data-target="#reserveModalSuccess">Reserve</button></td>
-                        <td class="text-center"><button class="btn btn-danger btn-sm reserve-del-btn mx-auto" onclick="reserveDel()">Delete</button></td>
-                      </tr>
-
+                    <tbody id='application_table'>
+                     
                   </table>
       </div>
     </div>
   </div>
 </div>
 
-<div class="modal fade" id="reserveModalSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-notify modal-lg modal-primary " role="document">
-            <!--Content-->
-            <div class="modal-content">
-                <!--Header-->
-                <div class="modal-header">
-                    <div class="modal-head-center">
-                        <p class="heading lead">Reservation Form</p>
-                    </div>
 
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true" class="white-text">&times;</span>
-                    </button>
-                </div>
-
-                <!--Body-->
-                <div class="modal-body">
-                    <div class="text-center">
-                        <i class="far fa-file-alt fa-4x mb-3 animated rotateIn"></i>
-                    </div>
-
-                    <div class="container modalBookingForm">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div class="md-form">
-                                    <input type="text" id="username" class="form-control">
-                                    <label for="username">Enter Your Name</label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div class="md-form">
-                                    <input type="text" id="useremail" class="form-control">
-                                    <label for="useremail">Enter Your Email Address</label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div class="md-form">
-                                    <input type="text" id="userphone" class="form-control">
-                                    <label for="userphone">Enter Your Phone No.</label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div class="md-form">
-                                    <div class="row">
-                                        <div class="col-3">
-                                            <label for="bookdate">Booking Date</label>
-                                        </div>
-                                        <div class="col-9">
-                                            <input type="date" id="bookdate" class="form-control">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div class="row">
-                                    <div class="col-3">
-                                        <div class="md-form">
-                                            <label for="people">Price:</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-9">
-                                        <div class="md-form">
-                                            <input type="text" id="price" class="form-control">
-                                            <label for="price">Enter Price</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                                <div class="col-sm-12">
-                                    <div class="row">
-                                        <div class="col-3">
-                                            <div class="md-form">
-                                                <label for="people">Capacity:</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-9">
-                                            <div class="md-form">
-                                                <input type="text" id="price" class="form-control">
-                                                <label for="price">Enter Capacity of People</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                    </div>
-                </div>
-
-                <!--Footer-->
-                <div class="modal-footer justify-content-center">
-                    <a type="button" class="btn btn-primary" onclick="reserveBooking()">Reserve <i class="fa fa-paper-plane ml-1"></i></a>
-                    <a type="button" class="btn btn-outline-primary waves-effect" data-dismiss="modal">No,
-                        thanks</a>
-                </div>
-            </div>
-            <!--/.Content-->
-        </div>
-    </div>
 
 </body>
 <!-- SCRIPTS -->
-<script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 <!-- JavaScript -->
-<script src="../js/app.js" type="text/javascript"></script>
-<script src="../js/custom-js/auth.js"></script>
 
 <!-- JQuery -->
 <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
@@ -374,5 +231,40 @@ function reserveDel(){
 function reserveBooking(){
 
 }
+function fetch_applications(){
+  
+let xhttp = new XMLHttpRequest();
+        xhttp.open('GET','/get_banquet',true);
+        xhttp.send();
+        xhttp.onreadystatechange = function(){
+            if(this.readyState == 4 && this.status == 200){
+                console.log(this.responseText);
+               let banq = JSON.parse(this.responseText).banquet;
+               let applications = JSON.parse(banq.applications);
+               let str = ``;
+               applications.forEach(application => {
+                   str += ` <tr>
+                        <td>`+application.name+`</td>
+                        <td>`+application.email+`</td>
+                        <td>`+application.phone+`</td>
+                        <td>`+application.date+`</td>
+                        <td>`+application.capacity+`</td>
+                        <td><input class='form-control' ></td>
+                        <td class="text-center"><button onClick='reserve(this)' class="btn btn-primary btn-sm reserve-del-btn mx-auto" >Reserve</button></td>
+                        <td class="text-center"><a class="btn btn-danger btn-sm reserve-del-btn mx-auto" href='/delete_application/`+banq._id+`/`+application.date+`' >Delete</button></a>
+                      </tr>`;
+               });
+               document.getElementById('application_table').innerHTML += str;
+
+               console.log(banq);
+                
+                // console.log('banq d
+
+                    
+            
+            }
+        }
+}
+fetch_applications();
 </script>
 </html>
