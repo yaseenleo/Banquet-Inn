@@ -79,6 +79,19 @@ app.post('/signup',(req,res)=>{
     })
 
 })
+app.get('/add_reservation/:name/:email/:phone/:date/:quantity/:price',(req,res)=>{
+    let obj = req.params;
+    let banquet_id =JSON.parse(req.cookies.banquet)._id;
+    Banquets.findById(banquet_id,(err,banquet)=>{
+        let reservations = JSON.parse(banquet.reservations);
+        reservations.push(obj);
+        console.log(reservations);
+        banquet.reservations = JSON.stringify(reservations);
+        banquet.save(()=>{
+            res.redirect('/banquet_info');
+        })
+    })
+})
 app.get('/delete_application/:id/:date',(req,res)=>{
     let id= req.params.id ;
     let date = req.params.date;

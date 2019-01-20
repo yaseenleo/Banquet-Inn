@@ -128,43 +128,8 @@
                         </th>
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr>
-                        <td>Tiger Nixon</td>
-                        <td>abc@gmail.com</td>
-                        <td>0344-1234567</td>
-                        <td>2011/04/25</td>
-                        <td>100,000</td>
-                        <td>500</td>
-                        <td class="text-center"><button class="btn btn-danger btn-sm reserve-del-btn mx-auto" onclick="reserveDel()">Delete</button></td>
-                      </tr>
-                      <tr>
-                        <td>Garrett Winters</td>
-                        <td>abc@gmail.com</td>
-                        <td>0344-1234567</td>
-                        <td>2011/04/25</td>
-                        <td>100,000</td>
-                        <td>500</td>
-                        <td class="text-center"><button class="btn btn-danger btn-sm reserve-del-btn mx-auto" onclick="reserveDel()">Delete</button></td>
-                      </tr>
-                      <tr>
-                        <td>Ashton Cox</td>
-                        <td>abc@gmail.com</td>
-                        <td>0344-1234567</td>
-                        <td>2011/04/25</td>
-                        <td>100,000</td>
-                        <td>500</td>
-                        <td class="text-center"><button class="btn btn-danger btn-sm reserve-del-btn mx-auto" onclick="reserveDel()">Delete</button></td>
-                      </tr>
-                      <tr>
-                        <td>Cedric Kelly</td>
-                        <td>abc@gmail.com</td>
-                        <td>0344-1234567</td>
-                        <td>2011/04/25</td>
-                        <td>100,000</td>
-                        <td>500</td>
-                        <td class="text-center"><button class="btn btn-danger btn-sm reserve-del-btn mx-auto" onclick="reserveDel()">Delete</button></td>
-                      </tr>
+                    <tbody id='reservation_table'>
+                     </tbody>
 
                   </table>
     </div>
@@ -192,7 +157,7 @@
                       </tr>
                     </thead>
                     <tbody id='application_table'>
-                     
+                     </tbody>
                   </table>
       </div>
     </div>
@@ -248,7 +213,7 @@ let xhttp = new XMLHttpRequest();
                         <td>`+application.email+`</td>
                         <td>`+application.phone+`</td>
                         <td>`+application.date+`</td>
-                        <td>`+application.capacity+`</td>
+                        <td>`+application.quantity+`</td>
                         <td><input class='form-control' ></td>
                         <td class="text-center"><button onClick='reserve(this)' class="btn btn-primary btn-sm reserve-del-btn mx-auto" >Reserve</button></td>
                         <td class="text-center"><a class="btn btn-danger btn-sm reserve-del-btn mx-auto" href='/delete_application/`+banq._id+`/`+application.date+`' >Delete</button></a>
@@ -266,5 +231,50 @@ let xhttp = new XMLHttpRequest();
         }
 }
 fetch_applications();
+function fetch_reservations(){
+  
+  let xhttp = new XMLHttpRequest();
+          xhttp.open('GET','/get_banquet',true);
+          xhttp.send();
+          xhttp.onreadystatechange = function(){
+              if(this.readyState == 4 && this.status == 200){
+                  console.log(this.responseText);
+                 let banq = JSON.parse(this.responseText).banquet;
+                 let reservations = JSON.parse(banq.reservations);
+                 let str = ``;
+                 reservations.forEach(application => {
+                     str += ` <tr>
+                          <td>`+application.name+`</td>
+                          <td>`+application.email+`</td>
+                          <td>`+application.phone+`</td>
+                          <td>`+application.date+`</td>
+                          <td>`+application.quantity+`</td>
+                          <td>`+application.price+`</td>
+                          <td class="text-center"><a class="btn btn-danger btn-sm reserve-del-btn mx-auto" href='/delete_application/`+banq._id+`/`+application.date+`' >Delete</button></a>
+                        </tr>`;
+                 });
+                 document.getElementById('reservation_table').innerHTML += str;
+  
+                 console.log(banq);
+                  
+                  // console.log('banq d
+  
+                      
+              
+              }
+          }
+  }
+  fetch_reservations();
+  
+function reserve(e){
+    let tr = e.parentNode.parentNode;
+    let name = tr.getElementsByTagName('td')[0].innerHTML , 
+    email = tr.getElementsByTagName('td')[1].innerHTML, 
+    phone = tr.getElementsByTagName('td')[2].innerHTML,
+    date = tr.getElementsByTagName('td')[3].innerHTML,
+    quantity =tr.getElementsByTagName('td')[4].innerHTML,
+     price = tr.getElementsByTagName('td')[5].getElementsByTagName('input')[0].value;
+     window.location.assign('/add_reservation/'+name+'/'+email+'/'+phone+'/'+date+'/'+quantity+'/'+price)
+}
 </script>
 </html>
