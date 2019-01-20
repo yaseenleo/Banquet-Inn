@@ -93,7 +93,29 @@ res.sendFile(path.join(__dirname,"/public","/pages","/login","/signin.html"))
 app.get("/banquetdetail",(req, res)=>{
     res.sendFile(path.join(__dirname,"/public/pages/banquetdetail.html"))
 })
-
+app.post("/book",(req,res)=>{
+    let id = req.body.id,
+        name = req.body.name,
+        email = req.body.email,
+        phone = req.body.phone,
+        date = req.body.date,
+        quantity = req.body.quantity;
+        Banquets.findById(id,(err,banquet)=>{
+            console.log(banquet);
+            let applications = JSON.parse(banquet.applications);
+            
+                applications.push({
+                    name,email,phone,date,quantity
+                });
+                console.log('application as null',applications);
+                banquet.applications = JSON.stringify(applications);
+                banquet.save(()=>{
+                    res.redirect('/');
+                })
+            
+        })
+        console.log(req.body);
+})
 app.post("/send_mail",(req,res)=>{
     let name = req.body.name,
         email = req.body.email,

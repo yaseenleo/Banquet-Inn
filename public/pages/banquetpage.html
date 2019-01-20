@@ -369,6 +369,8 @@
 
 
     <!-- Central Modal Medium Success -->
+    <form action='/book' method="POST">
+
     <div class="modal fade" id="centralModalSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-notify modal-lg modal-primary " role="document">
@@ -390,12 +392,12 @@
                     <div class="text-center">
                         <i class="far fa-file-alt fa-4x mb-3 animated rotateIn"></i>
                     </div>
-
                     <div class="container modalBookingForm">
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="md-form">
-                                    <input type="text" id="username" class="form-control">
+                                        <input type="hidden" id="banq_id" name='id' class="form-control">
+                                    <input type="text" id="username" name='name' class="form-control">
                                     <label for="username">Enter Your Name</label>
                                 </div>
                             </div>
@@ -404,7 +406,7 @@
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="md-form">
-                                    <input type="text" id="useremail" class="form-control">
+                                    <input type="text" id="useremail" name='email' class="form-control">
                                     <label for="useremail">Enter Your Email Address</label>
                                 </div>
                             </div>
@@ -413,7 +415,7 @@
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="md-form">
-                                    <input type="text" id="userphone" class="form-control">
+                                    <input type="text" id="userphone" name='phone' class="form-control">
                                     <label for="userphone">Enter Your Phone No.</label>
                                 </div>
                             </div>
@@ -427,38 +429,14 @@
                                             <label for="userdate">Booking Date</label>
                                         </div>
                                         <div class="col-9">
-                                            <input type="date" id="userdate" class="form-control">
+                                            <input type="date" id="userdate" name='date' class="form-control">
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div class="row">
-                                    <div class="col-3">
-                                        <label for="">Timing:</label>
-                                    </div>
-                                    <div class="col-9">
-                                        <div class="custom-control custom-radio custom-control-inline">
-                                            <input type="radio" class="custom-control-input" id="night" value="Night">
-                                            <label class="custom-control-label" for="night">Night</label>
-                                        </div>
-
-                                        <div class="custom-control custom-radio custom-control-inline">
-                                            <input type="radio" class="custom-control-input" id="evening" value="Evening">
-                                            <label class="custom-control-label" for="evening">Evening</label>
-                                        </div>
-
-                                        <div class="custom-control custom-radio custom-control-inline">
-                                            <input type="radio" class="custom-control-input" id="afternoon" value="Afternoon">
-                                            <label class="custom-control-label" for="afternoon">Afternoon</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        
 
                         <div class="row">
                             <div class="col-sm-12">
@@ -470,7 +448,7 @@
                                     </div>
                                     <div class="col-9">
                                         <div class="md-form">
-                                            <input type="text" id="people" class="form-control">
+                                            <input type="text" id="people" class="form-control" name='quantity'>
                                             <label for="people">Enter Capacity Of People</label>
                                         </div>
                                     </div>
@@ -482,7 +460,7 @@
 
                 <!--Footer-->
                 <div class="modal-footer justify-content-center">
-                    <a type="button" class="btn btn-primary">Send <i class="fa fa-paper-plane ml-1"></i></a>
+                    <button type="submit" class="btn btn-primary">Send <i class="fa fa-paper-plane ml-1"></i></button>
                     <a type="button" class="btn btn-outline-primary waves-effect" data-dismiss="modal">No,
                         thanks</a>
                 </div>
@@ -490,6 +468,8 @@
             <!--/.Content-->
         </div>
     </div>
+</form>
+
     <!-- Central Modal Medium Success-->
 
 
@@ -528,6 +508,7 @@
                         document.getElementById('banq-capacity').innerHTML = banq.quantity;
                         document.getElementById('name').innerHTML = banq.owner;
                         document.getElementById('phone').innerHTML = banq.phone;
+                        document.getElementById('banq_id').value = banq._id;
                         let ser = '<ul>';
                         banq.services.split(',').forEach((service)=>{
                             ser += `<li>`+service+`</li>` ;
