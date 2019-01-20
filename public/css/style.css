@@ -206,3 +206,8 @@ body{
  margin-top:15px;
  color:#888888;
 }
+
+.reserve-del-btn{
+  margin-top: -16px;
+  margin-bottom: -16px;
+}
