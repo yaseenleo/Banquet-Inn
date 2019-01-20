@@ -5,6 +5,9 @@ const app = express();
 const nodemailer = require("nodemailer");
 const bodyParser = require("body-parser");
 const Banquets = require('./models/banquets');
+var cookieParser = require('cookie-parser');
+var sessions = require("express-session");
+
 let transporter = nodemailer.createTransport({
     host: 'smtp.yahoo.com',
     port: 587,
@@ -27,11 +30,19 @@ mongoose.connect("mongodb://yaseen:natsikap1@ds159574.mlab.com:59574/banquetinn"
 
     }
 });
+app.use(cookieParser());
 app.use(express.static(path.join(__dirname,"/public")));
 app.use(bodyParser.urlencoded({
     extended: false
 }));
 app.use(bodyParser.json());
+app.use(sessions({
+    secret: 'ddfd344f4dud8d8d8d8j',
+    resave: false,
+    saveUninitialized: true
+}));
+
+
 app.get("/",(req,res)=>{
         res.sendFile(path.join(__dirname,"/public/index.html"));
 });
@@ -92,6 +103,35 @@ res.sendFile(path.join(__dirname,"/public","/pages","/login","/signin.html"))
 });
 app.get("/banquetdetail",(req, res)=>{
     res.sendFile(path.join(__dirname,"/public/pages/banquetdetail.html"))
+})
+app.post('/signin',(req,res)=>{
+    let email = req.body.email,
+    password = req.body.password;
+    Banquets.findOne({email:email,password:password},(err,banquet)=>{
+        if(banquet===null){res.redirect('/')}
+        else{
+            res.cookie('banquet',JSON.stringify(banquet),{maxAge:1000*60*60*24*1});
+            res.redirect('/banquet_info');
+            console.log(banquet);
+        }
+       
+    })
+})
+app.get('/logout',(req,res)=>{
+    res.clearCookie("banquet");
+    res.redirect("/");
+})
+app.get('/banquet_info',(req,res)=>{
+    if(req.cookies.banquet){
+        res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
+        res.header('Expires', '-1');
+        res.header('Pragma', 'no-cache');
+      
+        res.sendFile(path.join(__dirname,"/public/pages/bookinginfo.html"))
+    }
+    else{
+        res.redirect('/');
+    }
 })
 app.post("/book",(req,res)=>{
     let id = req.body.id,
