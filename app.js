@@ -34,6 +34,9 @@ app.get("/contact",(req,res)=>{
 app.get("/signup",(req,res)=>{
     res.sendFile(path.join(__dirname,"/public/pages/login/signup.html"));
 });
+app.get("/specialsignup",(req, res)=>{
+    res.sendFile(path.join(__dirname, "/public/pages/login/clientSignUp.html"))
+})
 app.get("/home",(req,res)=>{
     res.sendFile(path.join(__dirname,"/public/pages/home.html"));
 })

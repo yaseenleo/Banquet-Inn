@@ -23,7 +23,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark primary-color">
 
         <!-- Navbar brand -->
-        <a class="navbar-brand" href="#">Banquet Inn</a>
+        <a class="navbar-brand" href="/">Banquet Inn</a>
 
         <!-- Collapse button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
@@ -37,9 +37,7 @@
             <!-- Links -->
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home
-                        <span class="sr-only">(current)</span>
-                    </a>
+                    <a class="nav-link" href="/">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Features</a>
@@ -50,17 +48,19 @@
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">Products</a>
                     <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Banquet</a>
+                        <a class="dropdown-item" href="/home">Banquet
+                            <span class="sr-only">(current)</span>
+                        </a>
                         <a class="dropdown-item" href="#">Catering</a>
                         <a class="dropdown-item" href="#">Transportation</a>
                     </div>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About Us</a>
+                    <a class="nav-link" href="/about">About Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="pages/contact.html">Contact Us</a>
+                    <a class="nav-link" href="/contact">Contact Us</a>
                 </li>
 
             </ul>
@@ -70,13 +70,13 @@
 
             <ul class="navbar-nav md-auto">
                 <li class="nav-item">
-                    <a href="login/signUp.html" class="nav-link">Sign Up</a>
+                    <a href="/signup" class="nav-link">Sign Up</a>
                 </li>
                 <li class="nav-item">
-                    <a href="login/signIn.html" class="nav-link">Sign In</a>
+                    <a href="/signin" class="nav-link">Sign In</a>
                 </li>
                 <li class="nav-item">
-                    <a href="" class="nav-link" id="logout">Log Out</a>
+                    <a href="/signin" class="nav-link" id="logout">Log Out</a>
                 </li>
             </ul>
         </div>
@@ -368,130 +368,129 @@
     <!-- Footer -->
 
 
-            <!-- Central Modal Medium Success -->
-            <div class="modal fade" id="centralModalSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog modal-notify modal-lg modal-primary " role="document">
-                    <!--Content-->
-                    <div class="modal-content">
-                        <!--Header-->
-                        <div class="modal-header">
-                            <div class="modal-head-center">
-                                <p class="heading lead">Booking Form</p>
-                            </div>
+    <!-- Central Modal Medium Success -->
+    <div class="modal fade" id="centralModalSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-notify modal-lg modal-primary " role="document">
+            <!--Content-->
+            <div class="modal-content">
+                <!--Header-->
+                <div class="modal-header">
+                    <div class="modal-head-center">
+                        <p class="heading lead">Booking Form</p>
+                    </div>
 
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true" class="white-text">&times;</span>
-                            </button>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="white-text">&times;</span>
+                    </button>
+                </div>
+
+                <!--Body-->
+                <div class="modal-body">
+                    <div class="text-center">
+                        <i class="far fa-file-alt fa-4x mb-3 animated rotateIn"></i>
+                    </div>
+
+                    <div class="container modalBookingForm">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="md-form">
+                                    <input type="text" id="username" class="form-control">
+                                    <label for="username">Enter Your Name</label>
+                                </div>
+                            </div>
                         </div>
 
-                        <!--Body-->
-                        <div class="modal-body">
-                            <div class="text-center">
-                                <i class="far fa-file-alt fa-4x mb-3 animated rotateIn"></i>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="md-form">
+                                    <input type="text" id="useremail" class="form-control">
+                                    <label for="useremail">Enter Your Email Address</label>
+                                </div>
                             </div>
+                        </div>
 
-                            <div class="container modalBookingForm">
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <div class="md-form">
-                                            <input type="text" id="username" class="form-control">
-                                            <label for="username">Enter Your Name</label>
-                                        </div>
-                                    </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="md-form">
+                                    <input type="text" id="userphone" class="form-control">
+                                    <label for="userphone">Enter Your Phone No.</label>
                                 </div>
+                            </div>
+                        </div>
 
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <div class="md-form">
-                                            <input type="text" id="useremail" class="form-control">
-                                            <label for="useremail">Enter Your Email Address</label>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="md-form">
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <label for="userdate">Booking Date</label>
                                         </div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <div class="md-form">
-                                            <input type="text" id="userphone" class="form-control">
-                                            <label for="userphone">Enter Your Phone No.</label>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <div class="md-form">
-                                            <div class="row">
-                                                <div class="col-3">
-                                                    <label for="userdate">Booking Date</label>
-                                                </div>
-                                                <div class="col-9">
-                                                    <input type="date" id="userdate" class="form-control">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <div class="row">
-                                            <div class="col-3">
-                                                <label for="">Timing:</label>
-                                            </div>
-                                            <div class="col-9">
-                                                <div class="custom-control custom-radio custom-control-inline">
-                                                    <input type="radio" class="custom-control-input" id="night" value="Night">
-                                                    <label class="custom-control-label" for="night">Night</label>
-                                                </div>
-
-                                                <div class="custom-control custom-radio custom-control-inline">
-                                                    <input type="radio" class="custom-control-input" id="evening" value="Evening">
-                                                    <label class="custom-control-label" for="evening">Evening</label>
-                                                </div>
-
-                                                <div class="custom-control custom-radio custom-control-inline">
-                                                    <input type="radio" class="custom-control-input" id="afternoon"
-                                                        value="Afternoon">
-                                                    <label class="custom-control-label" for="afternoon">Afternoon</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <div class="row">
-                                            <div class="col-3">
-                                                <div class="md-form">
-                                                    <label for="people">Range:</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-9">
-                                                <div class="md-form">
-                                                    <input type="text" id="people" class="form-control">
-                                                    <label for="people">Enter Capacity Of People</label>
-                                                </div>
-                                            </div>
+                                        <div class="col-9">
+                                            <input type="date" id="userdate" class="form-control">
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!--Footer-->
-                        <div class="modal-footer justify-content-center">
-                            <a type="button" class="btn btn-primary">Send <i class="fa fa-paper-plane ml-1"></i></a>
-                            <a type="button" class="btn btn-outline-primary waves-effect" data-dismiss="modal">No,
-                                thanks</a>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="row">
+                                    <div class="col-3">
+                                        <label for="">Timing:</label>
+                                    </div>
+                                    <div class="col-9">
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" class="custom-control-input" id="night" value="Night">
+                                            <label class="custom-control-label" for="night">Night</label>
+                                        </div>
+
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" class="custom-control-input" id="evening" value="Evening">
+                                            <label class="custom-control-label" for="evening">Evening</label>
+                                        </div>
+
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" class="custom-control-input" id="afternoon" value="Afternoon">
+                                            <label class="custom-control-label" for="afternoon">Afternoon</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="row">
+                                    <div class="col-3">
+                                        <div class="md-form">
+                                            <label for="people">Range:</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-9">
+                                        <div class="md-form">
+                                            <input type="text" id="people" class="form-control">
+                                            <label for="people">Enter Capacity Of People</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <!--/.Content-->
+                </div>
+
+                <!--Footer-->
+                <div class="modal-footer justify-content-center">
+                    <a type="button" class="btn btn-primary">Send <i class="fa fa-paper-plane ml-1"></i></a>
+                    <a type="button" class="btn btn-outline-primary waves-effect" data-dismiss="modal">No,
+                        thanks</a>
                 </div>
             </div>
-            <!-- Central Modal Medium Success-->
+            <!--/.Content-->
+        </div>
+    </div>
+    <!-- Central Modal Medium Success-->
 
 
 </body>

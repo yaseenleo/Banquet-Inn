@@ -34,7 +34,7 @@ function signUp() {
             icon: "success",
             button: "Done",
           }).then(() => {
-            window.location.assign("banquetpage.html")
+            window.location.assign("signin")
 
           })
         })
@@ -98,7 +98,7 @@ function clientSignUp() {
             icon: "success",
             button: "Done",
           }).then(() => {
-            window.location.assign("banquetpage.html")
+            window.location.assign("banquetdetail")
 
           })
 
