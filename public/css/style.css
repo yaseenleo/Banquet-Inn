@@ -165,3 +165,10 @@ body{
 .booking-form{
   margin-bottom: 2em;
 }
+
+/* banquet home page */
+.banq-list{
+  margin-top: 5em;
+  width: 100%;
+  height: auto;
+}

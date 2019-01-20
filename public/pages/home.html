@@ -14,6 +14,8 @@
     <link href="../css/mdb.min.css" rel="stylesheet">
     <!-- Your custom styles (optional) -->
     <link href="../css/style.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
 </head>
 
 <body>
@@ -133,11 +135,29 @@
                                         </div>
 
                                         <div class="col-sm-4">
+                                            <select class="md-form custom-select">
+                                                <option selected>Price Range</option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                            </select>
+                                        </div>
 
+                                        <div class="col-sm-4">
+                                            <div class="md-form">
+                                                <input id="bookdate" type="date" name="bookdate"  />
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <!-- show filter list -->
+
+                    <div class="container-fluid">
+                        <div class="banq-list">
+                            <h1>hello</h1>
+                        </div>
+                    </div>
                         </div>
                     </div>
                 </div>
@@ -156,5 +176,20 @@
 <script type="text/javascript" src="../js/bootstrap.min.js"></script>
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="../js/mdb.min.js"></script>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+
+<script>
+    $(function () {
+        $('input[name="bookdate"]').daterangepicker({
+            singleDatePicker: true,
+            showDropdowns: true,
+            minYear: 2019,
+            maxYear: parseInt(moment().format('YYYY'), 10),
+        });
+
+    });
+</script>
 
 </html>
