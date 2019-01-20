@@ -75,6 +75,11 @@ function clientSignUp() {
       console.log(typeof (email));
     }
   }
+  let banqName = document.getElementById("banq-name").value;
+  let ownerName = document.getElementById("owner-name").value;
+  let qtyPerson = document.getElementById("qty-person").value;
+  let about = document.getElementById("about").value;
+  let services = document.getElementById("services").value;
 
   firebase.auth().createUserWithEmailAndPassword(email, password)
     .then((success) => {
@@ -85,7 +90,13 @@ function clientSignUp() {
         email,
         password,
         phoneNumber,
-        gender
+        gender,
+        banqName,
+        ownerName,
+        qtyPerson,
+        about,
+        services,
+        reservations: []
       }
 
       let userUid = firebase.auth().currentUser.uid
@@ -122,15 +133,3 @@ function clientSignUp() {
       });
     });
 }
-
-// firebase.auth().sendSignInLinkToEmail(email, actionCodeSettings)
-// .then(function () {
-//   // The link was successfully sent. Inform the user.
-//   // Save the email locally so you don't need to ask the user for it again
-//   // if they open the link on the same device.
-//   window.localStorage.setItem('emailForSignIn', email);
-// })
-// .catch(function (error) {
-//   // Some error occurred, you can inspect the code: error.code
-// });
-
