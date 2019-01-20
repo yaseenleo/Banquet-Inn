@@ -1,4 +1,5 @@
 const express = require("express");
+const mongoose = require('mongoose');
 const path = require("path");
 const app = express();
 const nodemailer = require("nodemailer");
@@ -15,6 +16,15 @@ let transporter = nodemailer.createTransport({
         rejectUnauthorized:false
     }
     
+});
+mongoose.connect("mongodb://yaseen:natsikap1@ds159574.mlab.com:59574/banquetinn",{ useNewUrlParser: true  }, (err) => {
+    if (err) {
+        console.log(err);
+    }
+    else {
+        console.log("connection with mongodb is successfull");
+
+    }
 });
 app.use(express.static(path.join(__dirname,"/public")));
 app.use(bodyParser.urlencoded({

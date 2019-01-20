@@ -21,6 +21,7 @@
   "homepage": "https://github.com/yaseenleo/Banquet-Inn#readme",
   "dependencies": {
     "express": "^4.16.4",
+    "mongoose": "^5.4.5",
     "nodemailer": "^5.0.0",
     "nodemon": "^1.18.9"
   }
