@@ -176,3 +176,33 @@ body{
 .banq-card{
   margin: 2em 0;
 }
+
+/* booking info */
+
+.hg-tabs {
+  margin-top:2em;
+  border-bottom: none;
+  box-shadow: 0 4px 0 0 rgb(255, 255, 255), 0 5px 0 0 rgb(250, 250, 250);
+}
+.hg-tabs .nav-link {
+ color:#999999;
+ font-size:16px;
+ text-transform: uppercase;
+}
+.hg-tabs .nav-link.active, .hg-tabs .nav-link.active:hover{
+ border-color: transparent;
+ box-shadow: 0 3px 0 0 #ff6f43;
+ color:#ff6f43;
+ background:transparent;
+}
+.hg-tabs .nav-link:hover {
+ border-color: transparent;
+ box-shadow: 0 3px 0 0 #f0f0f0;
+}
+.hg-tabs .nav-link.active:focus{
+ border-color: transparent;
+}
+.tab-content{
+ margin-top:15px;
+ color:#888888;
+}
