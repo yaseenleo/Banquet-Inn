@@ -55,7 +55,9 @@
                         <a class="dropdown-item" href="#">Transportation</a>
                     </div>
                 </li>
-
+                <li class="nav-item">
+                    <a class="nav-link" href="/gallery">Gallery</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/about">About Us</a>
                 </li>
@@ -371,104 +373,104 @@
     <!-- Central Modal Medium Success -->
     <form action='/book' method="POST">
 
-    <div class="modal fade" id="centralModalSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-notify modal-lg modal-primary " role="document">
-            <!--Content-->
-            <div class="modal-content">
-                <!--Header-->
-                <div class="modal-header">
-                    <div class="modal-head-center">
-                        <p class="heading lead">Booking Form</p>
+        <div class="modal fade" id="centralModalSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-notify modal-lg modal-primary " role="document">
+                <!--Content-->
+                <div class="modal-content">
+                    <!--Header-->
+                    <div class="modal-header">
+                        <div class="modal-head-center">
+                            <p class="heading lead">Booking Form</p>
+                        </div>
+
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true" class="white-text">&times;</span>
+                        </button>
                     </div>
 
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true" class="white-text">&times;</span>
-                    </button>
-                </div>
-
-                <!--Body-->
-                <div class="modal-body">
-                    <div class="text-center">
-                        <i class="far fa-file-alt fa-4x mb-3 animated rotateIn"></i>
-                    </div>
-                    <div class="container modalBookingForm">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div class="md-form">
+                    <!--Body-->
+                    <div class="modal-body">
+                        <div class="text-center">
+                            <i class="far fa-file-alt fa-4x mb-3 animated rotateIn"></i>
+                        </div>
+                        <div class="container modalBookingForm">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="md-form">
                                         <input type="hidden" id="banq_id" name='id' class="form-control">
-                                    <input type="text" id="username" name='name' class="form-control">
-                                    <label for="username">Enter Your Name</label>
+                                        <input type="text" id="username" name='name' class="form-control">
+                                        <label for="username">Enter Your Name</label>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div class="md-form">
-                                    <input type="text" id="useremail" name='email' class="form-control">
-                                    <label for="useremail">Enter Your Email Address</label>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="md-form">
+                                        <input type="text" id="useremail" name='email' class="form-control">
+                                        <label for="useremail">Enter Your Email Address</label>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div class="md-form">
-                                    <input type="text" id="userphone" name='phone' class="form-control">
-                                    <label for="userphone">Enter Your Phone No.</label>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="md-form">
+                                        <input type="text" id="userphone" name='phone' class="form-control">
+                                        <label for="userphone">Enter Your Phone No.</label>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div class="md-form">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="md-form">
+                                        <div class="row">
+                                            <div class="col-3">
+                                                <label for="userdate">Booking Date</label>
+                                            </div>
+                                            <div class="col-9">
+                                                <input type="date" id="userdate" name='date' class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="row">
+                                <div class="col-sm-12">
                                     <div class="row">
                                         <div class="col-3">
-                                            <label for="userdate">Booking Date</label>
+                                            <div class="md-form">
+                                                <label for="people">Range:</label>
+                                            </div>
                                         </div>
                                         <div class="col-9">
-                                            <input type="date" id="userdate" name='date' class="form-control">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        
-
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div class="row">
-                                    <div class="col-3">
-                                        <div class="md-form">
-                                            <label for="people">Range:</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-9">
-                                        <div class="md-form">
-                                            <input type="text" id="people" class="form-control" name='quantity'>
-                                            <label for="people">Enter Capacity Of People</label>
+                                            <div class="md-form">
+                                                <input type="text" id="people" class="form-control" name='quantity'>
+                                                <label for="people">Enter Capacity Of People</label>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!--Footer-->
-                <div class="modal-footer justify-content-center">
-                    <button type="submit" class="btn btn-primary">Send <i class="fa fa-paper-plane ml-1"></i></button>
-                    <a type="button" class="btn btn-outline-primary waves-effect" data-dismiss="modal">No,
-                        thanks</a>
+                    <!--Footer-->
+                    <div class="modal-footer justify-content-center">
+                        <button type="submit" class="btn btn-primary">Send <i class="fa fa-paper-plane ml-1"></i></button>
+                        <a type="button" class="btn btn-outline-primary waves-effect" data-dismiss="modal">No,
+                            thanks</a>
+                    </div>
                 </div>
+                <!--/.Content-->
             </div>
-            <!--/.Content-->
         </div>
-    </div>
-</form>
+    </form>
 
     <!-- Central Modal Medium Success-->
 
@@ -488,20 +490,20 @@
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="../js/mdb.min.js"></script>
 <script>
-    function fetch_info(){
-        let id = window.location.href.substr(window.location.href.indexOf('/banquet/')+9,24);
+    function fetch_info() {
+        let id = window.location.href.substr(window.location.href.indexOf('/banquet/') + 9, 24);
         let xhttp = new XMLHttpRequest();
-        xhttp.open('GET','/get_banquets',true);
+        xhttp.open('GET', '/get_banquets', true);
         xhttp.send();
-        xhttp.onreadystatechange = function(){
-            if(this.readyState == 4 && this.status == 200){
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
                 console.log(this.responseText);
-               let banqs = JSON.parse(this.responseText).banquets;
-                 let str = ``;
+                let banqs = JSON.parse(this.responseText).banquets;
+                let str = ``;
                 // console.log('banq details', banqs);
-                 banqs.forEach((banq)=>{
-                    if(banq._id === id){
-                        console.log('banq',banq);
+                banqs.forEach((banq) => {
+                    if (banq._id === id) {
+                        console.log('banq', banq);
                         document.getElementById('banq-name').innerHTML = banq.name;
                         document.getElementById('banq-about').innerHTML = banq.about;
                         document.getElementById('banq-location').innerHTML = banq.address;
@@ -510,8 +512,8 @@
                         document.getElementById('phone').innerHTML = banq.phone;
                         document.getElementById('banq_id').value = banq._id;
                         let ser = '<ul>';
-                        banq.services.split(',').forEach((service)=>{
-                            ser += `<li>`+service+`</li>` ;
+                        banq.services.split(',').forEach((service) => {
+                            ser += `<li>` + service + `</li>`;
                         });
                         ser += `</ul>`;
 
@@ -520,10 +522,11 @@
 
 
                     }
-            });
+                });
             }
         }
     }
     fetch_info();
 </script>
+
 </html>

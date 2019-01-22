@@ -55,7 +55,9 @@
                         <a class="dropdown-item" href="#">Transportation</a>
                     </div>
                 </li>
-
+                <li class="nav-item">
+                    <a class="nav-link" href="/gallery">Gallery</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/about">About Us</a>
                 </li>
@@ -151,36 +153,38 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- show filter list -->
 
-                            <div class="container-fluid">
-
-                                <div class="container py-3">
-
-                                    <div id="banq-list">
-
-                                        <!-- <div class="card">
-                              <div class="row ">
-                                <div class="col-md-4">
-                                    <img src="https://placeholdit.imgix.net/~text?txtsize=38&txt=400%C3%97400&w=400&h=400" class="w-100">
-                                  </div>
-                                  <div class="col-md-8 px-3">
-                                    <div class="card-block px-3">
-                                      <h4 class="card-title">Lorem ipsum dolor sit amet</h4>
-                                      <p class="card-text">Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                                      <p class="card-text">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                      <a href="#" class="btn btn-primary">Read More</a>
-                                    </div>
-                                  </div>
-                        
-                                </div>
-                              </div> -->
-
-                                    </div>
-
-                                </div>
-                            </div>
                         </div>
+                    </div>
+                </div>
+
+                <!-- show filter list -->
+
+                <div class="container-fluid">
+
+                    <div class="container py-3">
+
+                        <div id="banq-list">
+
+                            <!-- <div class="card">
+                      <div class="row ">
+                        <div class="col-md-4">
+                            <img src="https://placeholdit.imgix.net/~text?txtsize=38&txt=400%C3%97400&w=400&h=400" class="w-100">
+                          </div>
+                          <div class="col-md-8 px-3">
+                            <div class="card-block px-3">
+                              <h4 class="card-title">Lorem ipsum dolor sit amet</h4>
+                              <p class="card-text">Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                              <p class="card-text">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                              <a href="#" class="btn btn-primary">Read More</a>
+                            </div>
+                          </div>
+                
+                        </div>
+                      </div> -->
+
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -217,66 +221,77 @@
         });
 
     });
-    // firebase.database().ref('/clientUsers').on('value', (snapshot) => {
-    //     banqs = snapshot.val();
-    //     console.log('type of', typeof banqs);
-    //     let banq_list = document.getElementById('banq-list');
-    //     let str = ``;
-    //     console.log('banq details', banqs);
-    //     for (banq in banqs) {
-    //         str +=
-    //             `
-    //                         <div class="card banq-card">
-    //                           <div class="row ">
-    //                             <div class="col-md-4">
-    //                                 <img src="https://placeholdit.imgix.net/~text?txtsize=38&txt=400%C3%97400&w=400&h=400" class="w-100 img-fluid">
-    //                               </div>
-    //                               <div class="col-md-8 px-3">
-    //                                 <div class="card-block px-3">
-    //                                   <h4 class="card-title">${banqs[banq].banqName}</h4>
-    //                                   <p class="card-text">  ${banqs[banq].about} </p>
-    //                                   <a href="#" class="btn btn-primary">Read More</a>
-    //                                 </div>
-    //                               </div>
-                        
-    //                             </div>
-    //                           </div>
-    //                         `
-    //     };
-    //     banq_list.innerHTML = str;
-   // })
-    function fetch_banquets(){
+
+    function fetch_banquets() {
         let xhttp = new XMLHttpRequest();
-        xhttp.open('GET','/get_banquets',true);
+        xhttp.open('GET', '/get_banquets', true);
         xhttp.send();
-        xhttp.onreadystatechange = function(){
-            if(this.readyState == 4 && this.status == 200){
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
                 console.log(this.responseText);
                 banqs = JSON.parse(this.responseText).banquets;
                 let banq_list = document.getElementById('banq-list');
-                 let str = ``;
-                 console.log('banq details', banqs);
-                 banqs.forEach((banq)=>{
-                      str +=
-                `
+                let str = ``;
+                console.log('banq details', banqs);
+                banqs.forEach((banq) => {
+                    str +=
+                        `
                             <div class="card banq-card">
                               <div class="row ">
                                 <div class="col-md-4">
-                                    <img src="https://placeholdit.imgix.net/~text?txtsize=38&txt=400%C3%97400&w=400&h=400" class="w-100 img-fluid">
+                                    <img src="img/restaurant.jpg" class="w-100 img-fluid">
                                   </div>
                                   <div class="col-md-8 px-3">
-                                    <div class="card-block px-3">
-                                      <h4 class="card-title">${banq.name}</h4>
-                                      <p class="card-text">  ${banq.about} </p>
-                                      <a href="/banquet/${banq._id}" class="btn btn-primary">Read More</a>
+                                        <div class="card-block px-3">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h4 class="card-title py-3">${banq.name}</h4>
+                                        </div>
+                                        </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <p class="card-text py-3">${banq.about} </p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="row">
+                                                <div class="col-sm-5">
+                                                    <h4 class="float-right">Price: </h4>    
+                                                </div>
+                                                <div class="col-sm-7">
+                                                    <p class="banq-sub-info">100000</p>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                    <div class="row">
+                                                <div class="col-sm-5">
+                                                    <h4 class="float-right">Timing: </h4>    
+                                                </div>
+                                                <div class="col-sm-7">
+                                                    <p class="banq-sub-info">Afternoon</p>
+                                                </div>
+                                            </div>
+                                            </div>
+                                            <div>
+                                                <div class="row">
+                                                    <div class="col-sm-5">
+                                                        <h4 class="float-right">Space: </h4>    
+                                                    </div>
+                                                <div class="col-sm-7">
+                                                    <p class="banq-sub-info">500</p>
+                                                </div>
+                                            </div>
+                                            </div>
+                                            <a href="/banquet/${banq._id}" class="btn btn-primary">Read More</a>
+                                        </div>    
+                                    </div>
                                     </div>
                                   </div>
                         
                                 </div>
                               </div>
                             `
-        });
-        banq_list.innerHTML = str;
+                });
+                banq_list.innerHTML = str;
             }
         }
     }

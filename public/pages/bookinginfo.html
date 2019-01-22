@@ -60,7 +60,9 @@
                         <a class="dropdown-item" href="#">Transportation</a>
                     </div>
                 </li>
-
+                <li class="nav-item">
+                    <a class="nav-link" href="/gallery">Gallery</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/about">About Us</a>
                 </li>
@@ -81,7 +83,7 @@
                     <a href="/signin" class="nav-link">Sign In</a>
                 </li> -->
                 <li class="nav-item">
-                    <a href="/logout" class="nav-link" >Log Out</a>
+                    <a href="/logout" class="nav-link">Log Out</a>
                 </li>
             </ul>
         </div>
@@ -91,78 +93,78 @@
     </nav>
     <!--/.Navbar-->
 
-<div class="container-fluid">
-    <!-- Bootstrap CSS -->
-<!-- jQuery first, then Bootstrap JS. -->
-<!-- Tabs -->
-<div class="container">
-    <ul class="nav nav-tabs nav-justified hg-tabs" role="tablist">
-      <li class="nav-item">
-        <a class="nav-link active" href="#profile" role="tab" data-toggle="tab">Reserved List</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#buzz" role="tab" data-toggle="tab">Application List</a>
-      </li>
-    </ul>
-  
-    <!-- Tab panes -->
-    <div class="tab-content">
-        <!-- reserved List -->
-      <div role="tabpanel" class="tab-pane in active" id="profile">
-            <table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%">
-                    <thead>
-                      <tr>
-                        <th class="th-sm">Name
-                        </th>
-                        <th class="th-sm">Email Address
-                        </th>
-                        <th class="th-sm">Phone No.
-                        </th>
-                        <th class="th-sm">Date
-                        </th>
-                        <th class="th-sm">Price
-                        </th>
-                        <th class="th-sm">Capacity
-                            </th>
-                        <th class="th-sm">Cancel
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody id='reservation_table'>
-                     </tbody>
+    <div class="container-fluid">
+        <!-- Bootstrap CSS -->
+        <!-- jQuery first, then Bootstrap JS. -->
+        <!-- Tabs -->
+        <div class="container">
+            <ul class="nav nav-tabs nav-justified hg-tabs" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#profile" role="tab" data-toggle="tab">Reserved List</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#buzz" role="tab" data-toggle="tab">Application List</a>
+                </li>
+            </ul>
 
-                  </table>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <!-- reserved List -->
+                <div role="tabpanel" class="tab-pane in active" id="profile">
+                    <table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th class="th-sm">Name
+                                </th>
+                                <th class="th-sm">Email Address
+                                </th>
+                                <th class="th-sm">Phone No.
+                                </th>
+                                <th class="th-sm">Date
+                                </th>
+                                <th class="th-sm">Price
+                                </th>
+                                <th class="th-sm">Capacity
+                                </th>
+                                <th class="th-sm">Cancel
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody id='reservation_table'>
+                        </tbody>
+
+                    </table>
+                </div>
+                <!-- reservation list -->
+                <div role="tabpanel" class="tab-pane" id="buzz">
+                    <table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th class="th-sm">Name
+                                </th>
+                                <th class="th-sm">Email Address
+                                </th>
+                                <th class="th-sm">Phone No.
+                                </th>
+                                <th class="th-sm">Date
+                                </th>
+                                <th class="th-sm">Capacity
+                                </th>
+                                <th class="th-sm">Booking Price
+                                </th>
+                                <th class="th-sm">Action
+                                </th>
+                                <th class="th-sm">Cancel
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody id='application_table'>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
-        <!-- reservation list -->
-      <div role="tabpanel" class="tab-pane" id="buzz">
-            <table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%">
-                    <thead>
-                      <tr>
-                        <th class="th-sm">Name
-                        </th>
-                        <th class="th-sm">Email Address
-                        </th>
-                        <th class="th-sm">Phone No.
-                        </th>
-                        <th class="th-sm">Date
-                        </th>
-                        <th class="th-sm">Capacity
-                            </th>
-                        <th class="th-sm">Booking Price
-                            </th>
-                        <th class="th-sm">Action
-                        </th>
-                        <th class="th-sm">Cancel
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody id='application_table'>
-                     </tbody>
-                  </table>
-      </div>
-    </div>
-  </div>
-</div>
 
 
 
@@ -185,96 +187,98 @@
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 
 <script>
-function reserveDel(){
-    swal({
-  title: "Delete!",
-  text: "Are You Sure",
-  icon: "error",
-  button: "Delete",
-});}
+    function reserveDel() {
+        swal({
+            title: "Delete!",
+            text: "Are You Sure",
+            icon: "error",
+            button: "Delete",
+        });
+    }
 
-function reserveBooking(){
+    function reserveBooking() {
 
-}
-function fetch_applications(){
-  
-let xhttp = new XMLHttpRequest();
-        xhttp.open('GET','/get_banquet',true);
+    }
+    function fetch_applications() {
+
+        let xhttp = new XMLHttpRequest();
+        xhttp.open('GET', '/get_banquet', true);
         xhttp.send();
-        xhttp.onreadystatechange = function(){
-            if(this.readyState == 4 && this.status == 200){
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
                 console.log(this.responseText);
-               let banq = JSON.parse(this.responseText).banquet;
-               let applications = JSON.parse(banq.applications);
-               let str = ``;
-               applications.forEach(application => {
-                   str += ` <tr>
-                        <td>`+application.name+`</td>
-                        <td>`+application.email+`</td>
-                        <td>`+application.phone+`</td>
-                        <td>`+application.date+`</td>
-                        <td>`+application.quantity+`</td>
+                let banq = JSON.parse(this.responseText).banquet;
+                let applications = JSON.parse(banq.applications);
+                let str = ``;
+                applications.forEach(application => {
+                    str += ` <tr>
+                        <td>`+ application.name + `</td>
+                        <td>`+ application.email + `</td>
+                        <td>`+ application.phone + `</td>
+                        <td>`+ application.date + `</td>
+                        <td>`+ application.quantity + `</td>
                         <td><input class='form-control' ></td>
                         <td class="text-center"><button onClick='reserve(this)' class="btn btn-primary btn-sm reserve-del-btn mx-auto" >Reserve</button></td>
-                        <td class="text-center"><a class="btn btn-danger btn-sm reserve-del-btn mx-auto" href='/delete_application/`+banq._id+`/`+application.date+`' >Delete</button></a>
+                        <td class="text-center"><a class="btn btn-danger btn-sm reserve-del-btn mx-auto" href='/delete_application/`+ banq._id + `/` + application.date + `' >Delete</button></a>
                       </tr>`;
-               });
-               document.getElementById('application_table').innerHTML += str;
+                });
+                document.getElementById('application_table').innerHTML += str;
 
-               console.log(banq);
-                
+                console.log(banq);
+
                 // console.log('banq d
 
-                    
-            
+
+
             }
         }
-}
-fetch_applications();
-function fetch_reservations(){
-  
-  let xhttp = new XMLHttpRequest();
-          xhttp.open('GET','/get_banquet',true);
-          xhttp.send();
-          xhttp.onreadystatechange = function(){
-              if(this.readyState == 4 && this.status == 200){
-                  console.log(this.responseText);
-                 let banq = JSON.parse(this.responseText).banquet;
-                 let reservations = JSON.parse(banq.reservations);
-                 let str = ``;
-                 reservations.forEach(application => {
-                     str += ` <tr>
-                          <td>`+application.name+`</td>
-                          <td>`+application.email+`</td>
-                          <td>`+application.phone+`</td>
-                          <td>`+application.date+`</td>
-                          <td>`+application.quantity+`</td>
-                          <td>`+application.price+`</td>
-                          <td class="text-center"><a class="btn btn-danger btn-sm reserve-del-btn mx-auto" href='/delete_application/`+banq._id+`/`+application.date+`' >Delete</button></a>
+    }
+    fetch_applications();
+    function fetch_reservations() {
+
+        let xhttp = new XMLHttpRequest();
+        xhttp.open('GET', '/get_banquet', true);
+        xhttp.send();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                console.log(this.responseText);
+                let banq = JSON.parse(this.responseText).banquet;
+                let reservations = JSON.parse(banq.reservations);
+                let str = ``;
+                reservations.forEach(application => {
+                    str += ` <tr>
+                          <td>`+ application.name + `</td>
+                          <td>`+ application.email + `</td>
+                          <td>`+ application.phone + `</td>
+                          <td>`+ application.date + `</td>
+                          <td>`+ application.quantity + `</td>
+                          <td>`+ application.price + `</td>
+                          <td class="text-center"><a class="btn btn-danger btn-sm reserve-del-btn mx-auto" href='/delete_application/`+ banq._id + `/` + application.date + `' >Delete</button></a>
                         </tr>`;
-                 });
-                 document.getElementById('reservation_table').innerHTML += str;
-  
-                 console.log(banq);
-                  
-                  // console.log('banq d
-  
-                      
-              
-              }
-          }
-  }
-  fetch_reservations();
-  
-function reserve(e){
-    let tr = e.parentNode.parentNode;
-    let name = tr.getElementsByTagName('td')[0].innerHTML , 
-    email = tr.getElementsByTagName('td')[1].innerHTML, 
-    phone = tr.getElementsByTagName('td')[2].innerHTML,
-    date = tr.getElementsByTagName('td')[3].innerHTML,
-    quantity =tr.getElementsByTagName('td')[4].innerHTML,
-     price = tr.getElementsByTagName('td')[5].getElementsByTagName('input')[0].value;
-     window.location.assign('/add_reservation/'+name+'/'+email+'/'+phone+'/'+date+'/'+quantity+'/'+price)
-}
+                });
+                document.getElementById('reservation_table').innerHTML += str;
+
+                console.log(banq);
+
+                // console.log('banq d
+
+
+
+            }
+        }
+    }
+    fetch_reservations();
+
+    function reserve(e) {
+        let tr = e.parentNode.parentNode;
+        let name = tr.getElementsByTagName('td')[0].innerHTML,
+            email = tr.getElementsByTagName('td')[1].innerHTML,
+            phone = tr.getElementsByTagName('td')[2].innerHTML,
+            date = tr.getElementsByTagName('td')[3].innerHTML,
+            quantity = tr.getElementsByTagName('td')[4].innerHTML,
+            price = tr.getElementsByTagName('td')[5].getElementsByTagName('input')[0].value;
+        window.location.assign('/add_reservation/' + name + '/' + email + '/' + phone + '/' + date + '/' + quantity + '/' + price)
+    }
 </script>
+
 </html>

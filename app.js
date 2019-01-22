@@ -145,6 +145,12 @@ res.sendFile(path.join(__dirname,"/public","/pages","/login","/signin.html"))
 app.get("/banquetdetail",(req, res)=>{
     res.sendFile(path.join(__dirname,"/public/pages/banquetdetail.html"))
 })
+app.get("/about",(req, res)=>{
+    res.sendFile(path.join(__dirname,"/public/pages/about.html"))
+})
+app.get("/gallery",(req, res)=>{
+    res.sendFile(path.join(__dirname,"/public/pages/gallery.html"))
+})
 app.post('/signin',(req,res)=>{
     let email = req.body.email,
     password = req.body.password;
