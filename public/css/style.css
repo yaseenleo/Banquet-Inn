@@ -288,3 +288,22 @@ body{
 .content-info{
   margin-top: 2em;
 }
+.catering-head{
+  margin-top: 4em;
+  margin-bottom: 4em;
+}
+
+.deal-head h2{
+  color: #8576c7;
+  font-weight: 700;
+  margin-left: 1em;
+}
+.deal-head p{
+  color: #b2b0bb;
+  font-weight: 400;
+  margin-left: 2em;
+}
+
+.deal-list ul>li{
+  font-size: 12px;
+}
