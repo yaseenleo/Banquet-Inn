@@ -205,6 +205,43 @@ app.post("/book",(req,res)=>{
             
         })
         console.log(req.body);
+});
+app.post('/order_catering',(req,res)=>{
+    console.log(req.body);
+    let date = req.body.orderDate;
+    let qty = req.body.qty;
+    let email = req.body.email;
+    let deal = req.body.deal;
+    var mail1 = {
+        from: "Banquet Inn <mohammadyaseen223@gmail.com>",
+        to: "mohammadyaseen223@gmail.com", // riazkhan@abbasaliandsons.com
+        subject: 'Catering Order',
+        html: `<h1>${email}:${deal}</h1>
+        <p>${qty} ${date}</p>
+        `
+    };
+    var mail2 = {
+        from: "Banquet Inn <mohammadyaseen223@gmail.com>",
+        to: email, // riazkhan@abbasaliandsons.com
+        subject: 'Your CATERING ORDER HAS BEEN PLACED',
+        html: `<h1>${email}:${deal}</h1>
+        <p>${qty} ${date}</p>
+        `
+    };
+
+    // send mail with defined transport object
+    transporter.sendMail(mail1, function(error, response){
+        if(error) console.log(error);
+        else console.log("Message sent: " + response.messageId);
+        transporter.sendMail(mail2, function(error, response){
+            if(error) console.log(error);
+            else console.log("Message sent: " + response.messageId);
+            res.redirect('/');
+        });
+        // shut down the connection pool, no more messages
+       // transporter.close();
+    });
+
 })
 app.post("/send_mail",(req,res)=>{
     let name = req.body.name,

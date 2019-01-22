@@ -587,7 +587,7 @@
     <!-- Footer -->
 
 
-    <form action='/book' method="POST">
+    <form action='/order_catering' method="POST">
 
         <div class="modal fade" id="centralModalSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
             aria-hidden="true">
@@ -614,7 +614,7 @@
                             <div class="row">
                                 <div class="col-sm-12">
                                     <div class="md-form">
-                                        <input type="text" id="order-email" name='order-email' class="form-control">
+                                        <input type="text" id="order-email" name='email' class="form-control">
                                         <label for="order-email">Enter Your Email</label>
                                     </div>
                                 </div>
@@ -623,7 +623,7 @@
                             <div class="row">
                                 <div class="col-sm-12">
                                     <div class="md-form">
-                                        <input type="text" id="orderQty" name='orderQty' class="form-control">
+                                        <input type="text" id="orderQty" name='qty' class="form-control">
                                         <label for="orderQty">Enter Quantity of Person </label>
                                     </div>
                                 </div>
@@ -637,29 +637,22 @@
                                                 <label class="float-right" for="orderDate">Order Date</label>
                                             </div>
                                             <div class="col-10">
-                                                <input type="date" id="orderDate" name='orderDate' class="form-control">
+                                                <input type="date" id="date" name='orderDate' class="form-control">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <div class="md-form">
-                                        <input type="text" id="orderQty" name='orderQty' class="form-control">
-                                        <label for="orderQty">Enter Quantity of Person </label>
-                                    </div>
-                                </div>
-                            </div>
+                            
 
                             <div class="row">
                                 <div class="col-sm-12">
-                                    <select id="deals" name="deals" class="browser-default custom-select">
+                                    <select id="deals" name="deal" class="browser-default custom-select">
                                         <option selected>Select Your Deal</option>
-                                        <option value="1">Deal 1</option>
-                                        <option value="2">Deal 2</option>
-                                        <option value="3">Deal 3</option>
+                                        <option value="Deal 1">Deal 1</option>
+                                        <option value="deal 2">Deal 2</option>
+                                        <option value="deal 3">Deal 3</option>
                                         <option value="3">Deal 4</option>
                                         <option value="3">Deal 5</option>
                                       </select>
