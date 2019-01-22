@@ -182,7 +182,7 @@
             </div>
         </div>
     </div>
-    <div>
+
         <div class="container-fluid animated fadeIn">
             <div class="container banq-services">
 
@@ -207,6 +207,29 @@
                         </div>
                     </div>
                 </div>
+            <div id='dates_list'>
+                <select id='month' class='form-control' onchange="update_date()">
+                <option value='01'>January</option>
+                <option value='02'>February</option>
+                <option value='03'>March</option>
+                <option value='04'>April</option>
+                <option value='05'>May</option>
+                <option value='06'>June</option>
+                <option value='07'>July</option>
+                <option value='08'>August</option>
+                <option value='09'>September</option>
+                <option value='10'>October</option>
+                <option value='11'>November</option>
+                <option value='12'>December</option>
+                
+
+
+                </select>
+
+                <div id='dates'>
+
+                    </div>
+
             </div>
 
             <div class="verticle-line-breaker">
@@ -490,6 +513,19 @@
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="../js/mdb.min.js"></script>
 <script>
+    let dates_all=[];
+    function update_date(){
+        let month = document.getElementById('month').value;
+        let dates = `<ul>`;
+                        dates_all.forEach((r)=>{
+                            console.log(r.date.split("-"));
+                            if(r.date.split("-")[1]===month){
+                                dates += `<li>`+r.date+`</li>`;
+                            }
+                        });
+                        dates += `</ul>`
+                        document.getElementById('dates').innerHTML = dates;
+    }
     function fetch_info() {
         let id = window.location.href.substr(window.location.href.indexOf('/banquet/') + 9, 24);
         let xhttp = new XMLHttpRequest();
@@ -516,7 +552,8 @@
                             ser += `<li>` + service + `</li>`;
                         });
                         ser += `</ul>`;
-
+                        dates_all = JSON.parse(banq.reservations);
+                      update_date();  
 
                         document.getElementById('banq-service-list').innerHTML = ser;
 
