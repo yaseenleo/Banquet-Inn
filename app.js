@@ -9,19 +9,19 @@ var cookieParser = require('cookie-parser');
 var sessions = require("express-session");
 
 let transporter = nodemailer.createTransport({
-    host: 'smtp.yahoo.com',
+    host: 'smtp.gmail.com',
     port: 587,
     secure: false, // true for 465, false for other ports
     auth: {
-        user: "leo.yaseen@yahoo.com", // generated ethereal user
-        pass: "samsang123456789" // generated ethereal password
+        user: "rapshek@gmail.com", // generated ethereal user
+        pass: "logical007" // generated ethereal password
     },
     tls:{
         rejectUnauthorized:false
     }
     
 });
-mongoose.connect("mongodb://yaseen:natsikap1@ds159574.mlab.com:59574/banquetinn",{ useNewUrlParser: true  }, (err) => {
+mongoose.connect("mongodb://yaseen:b123456@ds053305.mlab.com:53305/banquetinn",{ useNewUrlParser: true  }, (err) => {
     if (err) {
         console.log(err);
     }
@@ -135,6 +135,9 @@ app.get("/home",(req,res)=>{
 app.get("/banquet/:id",(req,res)=>{
     res.sendFile(path.join(__dirname,"/public/pages/banquetpage.html"))
 })
+app.get("/catering",(req,res)=>{
+    res.sendFile(path.join(__dirname,"/public/pages/catering.html"))
+})
 // app.get("/user/:id",(req,res)=>{
 // let id = req.params.id;
 // res.send(id);
@@ -212,8 +215,8 @@ app.post("/send_mail",(req,res)=>{
         console.log("email",email);
 
         var mailOptions = {
-            from: "Banquet Inn <leo.yaseen@yahoo.com>",
-            to: "leo.yaseen@yahoo.com", // riazkhan@abbasaliandsons.com
+            from: "Banquet Inn <mohammadyaseen223@gmail.com>",
+            to: "mohammadyaseen223@gmail.com", // riazkhan@abbasaliandsons.com
             subject: subject,
             html: `<h1>${name}:${email}</h1>
             <p>${message}</p>
