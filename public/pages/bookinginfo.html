@@ -105,6 +105,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#buzz" role="tab" data-toggle="tab">Application List</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#settings" role="tab" data-toggle="tab">Settings</a>
+                </li>
             </ul>
 
             <!-- Tab panes -->
@@ -162,6 +165,31 @@
                         </tbody>
                     </table>
                 </div>
+                <!--- setting area-->
+                <div class="tab-pane" id='settings'>
+                    <form action='/edit_settings' method='POST'>
+                        <div class="form-group">
+                            <label class="sr-only">Owner Name</label>
+                            <input type='hidden' name='id' id='banq_id' >
+                            <input type="text" name="owner" placeholder="Owner Name..." class="form-control"
+                                id="owner-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="sr-only">About</label>
+                            <input type="text" name="about" placeholder="About..." class="form-control"
+                                id="about" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="sr-only">services</label>
+                            <input type="text" name="services" placeholder="Enter services" class="form-control"
+                                id="services" required>
+                        </div>
+                        <div class="form-group">
+                            <button class='btn btn-primary'>Update</button>
+                        </div>
+                    </form>
+                </div>
+                <!---- setting area end-->
             </div>
         </div>
     </div>
@@ -243,6 +271,10 @@
             if (this.readyState == 4 && this.status == 200) {
                 console.log(this.responseText);
                 let banq = JSON.parse(this.responseText).banquet;
+                document.getElementById('banq_id').value = banq._id;
+                document.getElementById('owner-name').value = banq.owner;
+                document.getElementById('about').value = banq.about;
+                document.getElementById('services').value = banq.services;
                 let reservations = JSON.parse(banq.reservations);
                 let str = ``;
                 reservations.forEach(application => {

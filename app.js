@@ -60,6 +60,12 @@ app.get("/signup",(req,res)=>{
 
 });
 // changes by ahmed
+app.post('/edit_settings',(req,res)=>{
+    console.log(req.body);
+    Banquets.findByIdAndUpdate(req.body.id,{$set:{owner:req.body.owner,about:req.body.about,services:req.body.services}},(err,resp)=>{
+        res.redirect('/banquet_info');
+    });
+})
 app.post('/signup',(req,res)=>{
     let name = req.body.name,
     about = req.body.about,
