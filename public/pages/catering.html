@@ -38,27 +38,24 @@
 
             <!-- Links -->
             <ul class="navbar-nav mx-auto">
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="/">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
-                </li>
 
+                <li class="nav-item">
+                    <a class="nav-link" href="/gallery">Gallery</a>
+                </li>
                 <!-- Dropdown -->
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown active">
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">Products</a>
                     <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="/home">Banquet
-                            <span class="sr-only">(current)</span>
                         </a>
-                        <a class="dropdown-item" href="#">Catering</a>
-                        <a class="dropdown-item" href="#">Transportation</a>
+                        <a class="dropdown-item" href="/catering">Catering
+                            <span class="sr-only">(current)</span>                        
+                        </a>
                     </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/gallery">Gallery</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/about">About Us</a>
@@ -90,13 +87,13 @@
     </nav>
     <div class="view overlay">
 
-        <div class="masthead responsive-image">
+        <div class="masthead header-pic">
 
             <a>
                 <div class="mask waves-effect rgba-white-slight"></div>
             </a>
-            <header class="entry-header">
-                <h1 class="entry-title text-center">Catering</h1>
+            <header class="cate-header">
+                <h1 class="cate-title text-center">Catering</h1>
             </header>
         </div>
     </div>
@@ -137,9 +134,6 @@
                                 <li>bagharey baigan, hari mirch-ka salan, aloo bukhara</li>
                             </ul>
                         </div>
-                        <div class="text-center">
-                            <button class="btn btn-primary">Order</button>
-                        </div>
                     </div>
                 </div>
 
@@ -179,9 +173,6 @@
                                     desert bar
                                 </li>
                             </ul>
-                        </div>
-                        <div class="text-center">
-                            <button class="btn btn-primary">Order</button>
                         </div>
                     </div>
                 </div>
@@ -234,9 +225,6 @@
                                     pan stall
                                 </li>
                             </ul>
-                        </div>
-                        <div class="text-center">
-                            <button class="btn btn-primary">Order</button>
                         </div>
                     </div>
                 </div>
@@ -434,6 +422,10 @@
 
         </div>
 
+        <div class="verticle-line-breaker">
+
+        </div>
+
         <div class="container">
             <div class="select-deal text-center">
                 <h1>Order A Deal</h1>
@@ -519,10 +511,10 @@
                     <h6 class="text-uppercase font-weight-bold">Products</h6>
                     <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                     <p>
-                        <a href="#!">Banquet</a>
+                        <a href="/home">Banquet</a>
                     </p>
                     <p>
-                        <a href="#!">Catering</a>
+                        <a href="/catering">Catering</a>
                     </p>
                     <p>
                         <a href="#!">Transport</a>

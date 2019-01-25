@@ -44,7 +44,7 @@
                     <a class="nav-link" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
+                    <a class="nav-link" href="/gallery">Gallery</a>
                 </li>
 
                 <!-- Dropdown -->
@@ -53,15 +53,12 @@
                         aria-haspopup="true" aria-expanded="false">Products</a>
                     <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="/home">Banquet</a>
-                        <a class="dropdown-item" href="#">Catering</a>
-                        <a class="dropdown-item" href="#">Transportation</a>
+                        <a class="dropdown-item" href="/catering">Catering</a>
                     </div>
                 </li>
+                
                 <li class="nav-item">
-                    <a class="nav-link" href="/gallery">Gallery</a>
-                  </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/aboutus">About Us</a>
+                    <a class="nav-link" href="/about">About Us</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/contact">Contact Us</a>
@@ -81,8 +78,13 @@
                 <li class="nav-item">
                     <a href="/signin" class="nav-link">Sign In</a>
                 </li>
-                <li class="nav-item">
-                    <a href="/signin" class="nav-link" id="logout">Log Out</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarSetting" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">Settings</a>
+                    <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarSetting">
+                        <a class="dropdown-item" href="/banquet_info">Setting</a>
+                        <a class="dropdown-item" href="/signin">Log Out</a>
+                    </div>
                 </li>
             </ul>
         </div>
@@ -113,60 +115,60 @@
                                         </div>
                                     </div>
                                     <div class="form-bottom">
-                                         <form  action="/signup" method="POST"> 
-                                        
-                                        <div class="form-group">
-                                            <label class="sr-only">Email</label>
-                                            <input type="email" name="email" placeholder="Email..." class="form-control"
-                                                id="c-email" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="sr-only">Password</label>
-                                            <input type="password" name="password" placeholder="Password..." class="form-control"
-                                                id="c-password" required>
-                                        </div>
-                                        <div class="form-group">
+                                        <form action="/signup" method="POST">
+
+                                            <div class="form-group">
+                                                <label class="sr-only">Email</label>
+                                                <input type="email" name="email" placeholder="Email..." class="form-control"
+                                                    id="c-email" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="sr-only">Password</label>
+                                                <input type="password" name="password" placeholder="Password..." class="form-control"
+                                                    id="c-password" required>
+                                            </div>
+                                            <div class="form-group">
                                                 <label class="sr-only">Address</label>
                                                 <input type="text" name="address" placeholder="Address..." class="form-control"
                                                     id="address">
                                             </div>
-                                        <div class="form-group">
-                                            <label class="sr-only">Phone Number</label>
-                                            <input type="text" name="phone" placeholder="Phone Number..." class="form-control"
-                                                id="c-phonenum">
-                                        </div>
-                                       
-                                        <div class="form-group">
-                                            <label class="sr-only">Banquet Name</label>
-                                            <input type="text" name="name" placeholder="Banquet Name..." class="form-control"
-                                                id="banq-name" required>
-                                        </div>
+                                            <div class="form-group">
+                                                <label class="sr-only">Phone Number</label>
+                                                <input type="text" name="phone" placeholder="Phone Number..." class="form-control"
+                                                    id="c-phonenum">
+                                            </div>
 
-                                        <div class="form-group">
-                                            <label class="sr-only">Owner Name</label>
-                                            <input type="text" name="owner" placeholder="Owner Name..." class="form-control"
-                                                id="owner-name" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="sr-only">Quantity of Person</label>
-                                            <input type="text" name="quantity" placeholder="Quantity of Person..." class="form-control"
-                                                id="qty-person" required>
-                                        </div>
+                                            <div class="form-group">
+                                                <label class="sr-only">Banquet Name</label>
+                                                <input type="text" name="name" placeholder="Banquet Name..." class="form-control"
+                                                    id="banq-name" required>
+                                            </div>
 
-                                        <div class="form-group">
-                                            <label class="sr-only">About</label>
-                                            <input type="text" name="about" placeholder="About..." class="form-control"
-                                                id="about" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="sr-only">services</label>
-                                            <input type="text" name="services" placeholder="Enter services" class="form-control"
-                                                id="services" required>
-                                        </div>
-                                        <div class="text-center">
-                                            <button type="submit" class="btn">Sign up</button>
-                                        </div>
-                                         </form> 
+                                            <div class="form-group">
+                                                <label class="sr-only">Owner Name</label>
+                                                <input type="text" name="owner" placeholder="Owner Name..." class="form-control"
+                                                    id="owner-name" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="sr-only">Quantity of Person</label>
+                                                <input type="text" name="quantity" placeholder="Quantity of Person..."
+                                                    class="form-control" id="qty-person" required>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="sr-only">About</label>
+                                                <input type="text" name="about" placeholder="About..." class="form-control"
+                                                    id="about" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="sr-only">services</label>
+                                                <input type="text" name="services" placeholder="Enter services" class="form-control"
+                                                    id="services" required>
+                                            </div>
+                                            <div class="text-center">
+                                                <button type="submit" class="btn">Sign up</button>
+                                            </div>
+                                        </form>
                                         <div class="text-center signup-info">
                                             <label for="" class="form-contorl-label">If you are a user <a href="signUp.html">Click
                                                     Here</a></label>
@@ -185,7 +187,8 @@
         </div>
 
         <!-- Central Modal Medium Info -->
-        <div class="modal fade" id="clientSignUpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal fade" id="clientSignUpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+            aria-hidden="true">
             <div class="modal-dialog modal-notify modal-info" role="document">
                 <!--Content-->
                 <div class="modal-content">
@@ -293,14 +296,12 @@
                     <h6 class="text-uppercase font-weight-bold">Products</h6>
                     <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                     <p>
-                        <a href="#!">Banquet</a>
+                        <a href="/home">Banquet</a>
                     </p>
                     <p>
-                        <a href="#!">Catering</a>
+                        <a href="/catering">Catering</a>
                     </p>
-                    <p>
-                        <a href="#!">Transport</a>
-                    </p>
+
 
                 </div>
                 <!-- Grid column -->

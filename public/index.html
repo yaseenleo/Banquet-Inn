@@ -40,10 +40,10 @@
             <span class="sr-only">(current)</span>
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
 
+        <li class="nav-item">
+          <a class="nav-link" href="/gallery">Gallery</a>
+        </li>
         <!-- Dropdown -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
@@ -51,13 +51,9 @@
           <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" href="/home">Banquet</a>
             <a class="dropdown-item" href="/catering">Catering</a>
-            <a class="dropdown-item" href="#">Transportation</a>
           </div>
         </li>
 
-        <li class="nav-item">
-          <a class="nav-link" href="/gallery">Gallery</a>
-        </li>
         <li class="nav-item">
           <a class="nav-link" href="/about">About Us</a>
         </li>
@@ -77,9 +73,15 @@
         <li class="nav-item">
           <a href="signin" class="nav-link">Sign In</a>
         </li>
-        <li class="nav-item">
-          <a href="/signin" class="nav-link" id="logout">Log Out</a>
-        </li>
+
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarSetting" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">Settings</a>
+            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarSetting">
+              <a class="dropdown-item" href="/banquet_info">Setting</a>
+              <a class="dropdown-item" href="/signin">Log Out</a>
+            </div>
+          </li>
       </ul>
     </div>
     <!-- Collapsible content -->
@@ -98,7 +100,7 @@
       </a>
       <header class="entry-header">
         <h1 class="entry-title text-center">Banquet Inn</h1>
-        <h2 class="entry-subtitle text-center">Uniting people happily</h2>
+        <h2 class="entry-subtitle text-center">You Name It We Have It</h2>
       </header>
     </div>
   </div>
@@ -118,7 +120,7 @@
 
             <!-- Card image -->
             <div class="view view-cascade overlay">
-              <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Slides/img%20(70).jpg" alt="Card image cap">
+              <img class="card-img-top" src="assets/slides/banq-hall.jpg" alt="Card image cap">
               <a href="#!">
                 <div class="mask rgba-white-slight"></div>
               </a>
@@ -128,9 +130,8 @@
             <div class="card-body card-body-cascade text-center">
 
               <!-- Title -->
-              <h4 class="card-title"><strong>My adventure</strong></h4>
-              <!-- Subtitle -->
-              <h6 class="font-weight-bold indigo-text py-2">Photography</h6>
+              <h4 class="card-title"><strong>Banquet</strong></h4>
+
               <!-- Text -->
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem
                 perspiciatis voluptatum a, quo nobis, non commodi quia repellendus sequi nulla voluptatem dicta
@@ -152,67 +153,39 @@
 
         <div class="sub-sections">
           <!-- Card deck -->
-        <div class="card-deck">
+          <div class="card-deck">
 
             <!-- Card -->
-            <div class="card mb-4">
-  
+            <div class="card mb-8">
+
               <!--Card image-->
               <div class="view overlay">
-                <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/16.jpg" alt="Card image cap">
+                <img class="card-img-top" src="assets/slides/catering.jpg" alt="Card image cap">
                 <a href="#!">
                   <div class="mask rgba-white-slight"></div>
                 </a>
               </div>
-  
+
               <!--Card content-->
-              <div class="card-body">
-  
+              <div class="card-body card-body-cascade text-center">
+
                 <!--Title-->
                 <h4 class="card-title">Catering</h4>
                 <!--Text-->
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
                   card's content.</p>
                 <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-                <button type="button" class="btn btn-light-blue btn-md">Read more</button>
-  
-              </div>
-  
-            </div>
-            <!-- Card -->
-  
-            <!-- Card -->
-            <div class="card mb-4">
-  
-              <!--Card image-->
-              <div class="view overlay">
-                <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/14.jpg" alt="Card image cap">
-                <a href="#!">
-                  <div class="mask rgba-white-slight"></div>
+                <a href="/catering">
+                  <button type="button" class="btn btn-light-blue btn-md">Read more</button>
                 </a>
               </div>
-  
-              <!--Card content-->
-              <div class="card-body">
-  
-                <!--Title-->
-                <h4 class="card-title">Transportation</h4>
-                <!--Text-->
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-                <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-                <button type="button" class="btn btn-light-blue btn-md">Read more</button>
-  
-              </div>
-  
+
             </div>
             <!-- Card -->
-  
-            
-  
+
           </div>
           <!-- Card deck -->
-  
+
         </div>
 
 
@@ -233,32 +206,32 @@
         </div>
 
         <div class="col-md-6 offers-text">
-            <h2>Flexible Booking Options</h2>
-            <p>Banquet Management allows you to check the availability of function space and
-               resources including combination, sharing, individual and sleeping rooms
-               that can be sold as meeting rooms; and to book events by the hour, day, week or by multiple weeks.</p>
+          <h2>Flexible Booking Options</h2>
+          <p>Banquet Management allows you to check the availability of function space and
+            resources including combination, sharing, individual and sleeping rooms
+            that can be sold as meeting rooms; and to book events by the hour, day, week or by multiple weeks.</p>
         </div>
       </div>
     </div>
   </section>
 
   <section class="container-fluid offers">
-      <div class="container">
-        <div class="row">
-            <div class="col-md-6 offers-text">
-                <h2>Fully Customizable Catering Packages</h2>
-                <p>Catering packages are a convenient and attractive way of catering your 
-                  events. Packages also make life easier for the Catering Sales staff by saving 
-                  them from having to compose resources from scratch for every single Event.</p>
-              </div>
-
-          <div class="col-md-6">
-            <img class="img-fluid" src="assets/img/technology-customize.jpg" alt="booking">
-          </div>
-  
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 offers-text">
+          <h2>Fully Customizable Catering Packages</h2>
+          <p>Catering packages are a convenient and attractive way of catering your
+            events. Packages also make life easier for the Catering Sales staff by saving
+            them from having to compose resources from scratch for every single Event.</p>
         </div>
+
+        <div class="col-md-6">
+          <img class="img-fluid" src="assets/slides/catering-sub.jpg" alt="booking">
+        </div>
+
       </div>
-    </section>
+    </div>
+  </section>
 
   <!-- offers end -->
 
@@ -335,14 +308,12 @@
           <h6 class="text-uppercase font-weight-bold">Products</h6>
           <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
           <p>
-            <a href="#!">Banquet</a>
+            <a href="/home">Banquet</a>
           </p>
           <p>
-            <a href="#!">Catering</a>
+            <a href="/catering">Catering</a>
           </p>
-          <p>
-            <a href="#!">Transport</a>
-          </p>
+          
 
         </div>
         <!-- Grid column -->
@@ -417,4 +388,5 @@
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="js/mdb.min.js"></script>
 <script src="js/custom-js/auth.js"></script>
+
 </html>

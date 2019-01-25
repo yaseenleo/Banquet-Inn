@@ -38,30 +38,27 @@
 
             <!-- Links -->
             <ul class="navbar-nav mx-auto">
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="/">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
-                </li>
 
+                <li class="nav-item">
+                    <a class="nav-link" href="/gallery">Gallery</a>
+                  </li>
                 <!-- Dropdown -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">Products</a>
                     <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="/home">Banquet
-                            <span class="sr-only">(current)</span>
                         </a>
-                        <a class="dropdown-item" href="#">Catering</a>
-                        <a class="dropdown-item" href="#">Transportation</a>
+                        <a class="dropdown-item" href="/catering">Catering</a>
                     </div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/gallery">Gallery</a>
-                  </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/about">About Us</a>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/about">About Us
+                        <span class="sr-only">(current)</span>                    
+                    </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/contact">Contact Us</a>
@@ -79,9 +76,14 @@
                 <li class="nav-item">
                     <a href="/signin" class="nav-link">Sign In</a>
                 </li>
-                <li class="nav-item">
-                    <a href="/signin" class="nav-link" id="logout">Log Out</a>
-                </li>
+                <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarSetting" data-toggle="dropdown" aria-haspopup="true"
+                          aria-expanded="false">Settings</a>
+                        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarSetting">
+                          <a class="dropdown-item" href="/banquet_info">Setting</a>
+                          <a class="dropdown-item" href="/signin">Log Out</a>
+                        </div>
+                      </li>
             </ul>
         </div>
         <!-- Collapsible content -->
@@ -311,14 +313,12 @@
                     <h6 class="text-uppercase font-weight-bold">Products</h6>
                     <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                     <p>
-                        <a href="#!">Banquet</a>
+                        <a href="/home">Banquet</a>
                     </p>
                     <p>
-                        <a href="#!">Catering</a>
+                        <a href="/catering">Catering</a>
                     </p>
-                    <p>
-                        <a href="#!">Transport</a>
-                    </p>
+
 
                 </div>
                 <!-- Grid column -->

@@ -53,7 +53,7 @@
                     <a class="nav-link" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
+                    <a class="nav-link" href="/gallery">Gallery</a>
                 </li>
 
                 <!-- Dropdown -->
@@ -63,12 +63,9 @@
                     <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="/home">Banquet</a>
                         <a class="dropdown-item" href="/catering">Catering</a>
-                        <a class="dropdown-item" href="#">Transportation</a>
                     </div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/gallery">Gallery</a>
-                  </li>
+                
                 <li class="nav-item">
                     <a class="nav-link" href="/about">About Us</a>
                 </li>
@@ -90,8 +87,13 @@
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="/signin" class="nav-link" id="logout">Log Out</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarSetting" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">Settings</a>
+                    <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarSetting">
+                        <a class="dropdown-item" href="/banquet_info">Setting</a>
+                        <a class="dropdown-item" href="/signin">Log Out</a>
+                    </div>
                 </li>
             </ul>
         </div>
@@ -114,28 +116,28 @@
                         Member Login
                     </span>
                     <form action="/signin" method="POST">
-                    <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-                        <input class="input100" type="text" id="email" name="email" placeholder="Email">
-                        <span class="focus-input100"></span>
-                        <span class="symbol-input100">
-                            <i class="fa fa-envelope" aria-hidden="true"></i>
-                        </span>
-                    </div>
+                        <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                            <input class="input100" type="text" id="email" name="email" placeholder="Email">
+                            <span class="focus-input100"></span>
+                            <span class="symbol-input100">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                            </span>
+                        </div>
 
-                    <div class="wrap-input100 validate-input" data-validate="Password is required">
-                        <input class="input100" type="password" id="pass" name="password" placeholder="Password">
-                        <span class="focus-input100"></span>
-                        <span class="symbol-input100">
-                            <i class="fa fa-lock" aria-hidden="true"></i>
-                        </span>
-                    </div>
+                        <div class="wrap-input100 validate-input" data-validate="Password is required">
+                            <input class="input100" type="password" id="pass" name="password" placeholder="Password">
+                            <span class="focus-input100"></span>
+                            <span class="symbol-input100">
+                                <i class="fa fa-lock" aria-hidden="true"></i>
+                            </span>
+                        </div>
 
-                    <div class="container-login100-form-btn">
-                        <button class="login100-form-btn" id="signin">
-                            Login
-                        </button>
-                    </div>
-                </form>
+                        <div class="container-login100-form-btn">
+                            <button class="login100-form-btn" id="signin">
+                                Login
+                            </button>
+                        </div>
+                    </form>
                     <div class="text-center p-t-12">
                         <span class="txt1">
                             Forgot
@@ -233,14 +235,12 @@
                     <h6 class="text-uppercase font-weight-bold">Products</h6>
                     <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                     <p>
-                        <a href="#!">Banquet</a>
+                        <a href="/home">Banquet</a>
                     </p>
                     <p>
-                        <a href="#!">Catering</a>
+                        <a href="/catering">Catering</a>
                     </p>
-                    <p>
-                        <a href="#!">Transport</a>
-                    </p>
+
 
                 </div>
                 <!-- Grid column -->

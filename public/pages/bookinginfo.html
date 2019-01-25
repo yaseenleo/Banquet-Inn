@@ -41,27 +41,24 @@
 
             <!-- Links -->
             <ul class="navbar-nav mx-auto">
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
+                    <a class="nav-link" href="/gallery">Gallery</a>
                 </li>
 
                 <!-- Dropdown -->
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown active">
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">Products</a>
                     <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="/home">Banquet
+                        </a>
+                        <a class="dropdown-item" href="/catering">Catering
                             <span class="sr-only">(current)</span>
                         </a>
-                        <a class="dropdown-item" href="#">Catering</a>
-                        <a class="dropdown-item" href="#">Transportation</a>
                     </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/gallery">Gallery</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/about">About Us</a>
@@ -82,8 +79,13 @@
                 <li class="nav-item">
                     <a href="/signin" class="nav-link">Sign In</a>
                 </li> -->
-                <li class="nav-item">
-                    <a href="/logout" class="nav-link">Log Out</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarSetting" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">Settings</a>
+                    <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarSetting">
+                        <a class="dropdown-item" href="/banquet_info">Setting</a>
+                        <a class="dropdown-item" href="/signin">Log Out</a>
+                    </div>
                 </li>
             </ul>
         </div>
@@ -129,8 +131,7 @@
                                 </th>
                                 <th class="th-sm">Capacity
                                 </th>
-                                <th class="th-sm">Cancel
-                                </th>
+                                
                             </tr>
                         </thead>
                         <tbody id='reservation_table'>
@@ -170,19 +171,19 @@
                     <form action='/edit_settings' method='POST'>
                         <div class="form-group">
                             <label class="sr-only">Owner Name</label>
-                            <input type='hidden' name='id' id='banq_id' >
-                            <input type="text" name="owner" placeholder="Owner Name..." class="form-control"
-                                id="owner-name" required>
+                            <input type='hidden' name='id' id='banq_id'>
+                            <input type="text" name="owner" placeholder="Owner Name..." class="form-control" id="owner-name"
+                                required>
                         </div>
                         <div class="form-group">
                             <label class="sr-only">About</label>
-                            <input type="text" name="about" placeholder="About..." class="form-control"
-                                id="about" required>
+                            <input type="text" name="about" placeholder="About..." class="form-control" id="about"
+                                required>
                         </div>
                         <div class="form-group">
                             <label class="sr-only">services</label>
-                            <input type="text" name="services" placeholder="Enter services" class="form-control"
-                                id="services" required>
+                            <input type="text" name="services" placeholder="Enter services" class="form-control" id="services"
+                                required>
                         </div>
                         <div class="form-group">
                             <button class='btn btn-primary'>Update</button>
@@ -285,7 +286,6 @@
                           <td>`+ application.date + `</td>
                           <td>`+ application.quantity + `</td>
                           <td>`+ application.price + `</td>
-                          <td class="text-center"><a class="btn btn-danger btn-sm reserve-del-btn mx-auto" href='/delete_application/`+ banq._id + `/` + application.date + `' >Delete</button></a>
                         </tr>`;
                 });
                 document.getElementById('reservation_table').innerHTML += str;

@@ -39,8 +39,9 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="/">Home</a>
                 </li>
+
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
+                    <a class="nav-link" href="/gallery">Gallery</a>
                 </li>
 
                 <!-- Dropdown -->
@@ -51,18 +52,19 @@
                         <a class="dropdown-item" href="/home">Banquet
                             <span class="sr-only">(current)</span>
                         </a>
-                        <a class="dropdown-item" href="#">Catering</a>
-                        <a class="dropdown-item" href="#">Transportation</a>
+                        <a class="dropdown-item" href="/catering">Catering</a>
                     </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/gallery">Gallery</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/about">About Us</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/contact">Contact Us</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarSetting" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">Settings</a>
+                    <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarSetting">
+                        <a class="dropdown-item" href="/banquet_info">Setting</a>
+                        <a class="dropdown-item" href="/signin">Log Out</a>
+                    </div>
                 </li>
 
             </ul>
@@ -77,8 +79,13 @@
                 <li class="nav-item">
                     <a href="/signin" class="nav-link">Sign In</a>
                 </li>
-                <li class="nav-item">
-                    <a href="/signin" class="nav-link" id="logout">Log Out</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarSetting" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">Settings</a>
+                    <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarSetting">
+                        <a class="dropdown-item" href="/banquet_info">Setting</a>
+                        <a class="dropdown-item" href="/signin">Log Out</a>
+                    </div>
                 </li>
             </ul>
         </div>
@@ -99,16 +106,13 @@
                 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(15).jpg"
-                                alt="First slide">
+                            <img class="d-block w-100" class="img-fluid" src="../assets/slides/slide1.jpg" alt="First slide">
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(16).jpg"
-                                alt="Second slide">
+                            <img class="d-block w-100" class="img-fluid" src="../assets/slides/slide4.jpg" alt="Second slide">
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(17).jpg"
-                                alt="Third slide">
+                            <img class="d-block w-100" class="img-fluid" src="../assets/slides/slide3.jpg" alt="Third slide">
                         </div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
@@ -183,52 +187,88 @@
         </div>
     </div>
 
-        <div class="container-fluid animated fadeIn">
-            <div class="container banq-services">
+    <div class="container-fluid animated fadeIn">
+        <div class="container banq-services">
 
-                <div class="banq-service">
-                    <div class="row">
-                        <div class="col-sm-6 col-md-6 ">
-                            <div class="">
-                                <h1>Amenities &amp; Services</h1>
-                            </div>
-                            <div id="banq-service-list">
-                            </div>
+            <div class="banq-service">
+                <div class="row">
+                    <div class="col-sm-6 col-md-6 ">
+                        <div class="">
+                            <h1>Amenities &amp; Services</h1>
                         </div>
+                        <div id="banq-service-list">
+                        </div>
+                    </div>
 
-                        <div class="col-sm-6 col-md-6">
-                            <div class="">
-                                <h1>Contact Us</h1>
-                            </div>
-                            <div class="banq-contact">
-                                <p>name: <span id="name">Name of responsible person</span></p>
-                                <p>Contact: <span id="phone">Phone Number</span></p>
-                            </div>
+                    <div class="col-sm-6 col-md-6">
+                        <div class="">
+                            <h1>Contact Us</h1>
+                        </div>
+                        <div class="banq-contact">
+                            <p>name: <span id="name">Name of responsible person</span></p>
+                            <p>Contact: <span id="phone">Phone Number</span></p>
                         </div>
                     </div>
                 </div>
-            <div id='dates_list'>
-                <select id='month' class='form-control' onchange="update_date()">
-                <option value='01'>January</option>
-                <option value='02'>February</option>
-                <option value='03'>March</option>
-                <option value='04'>April</option>
-                <option value='05'>May</option>
-                <option value='06'>June</option>
-                <option value='07'>July</option>
-                <option value='08'>August</option>
-                <option value='09'>September</option>
-                <option value='10'>October</option>
-                <option value='11'>November</option>
-                <option value='12'>December</option> 
-                </select>
+            </div>
 
-                <div id='dates'>
-
-                    </div>
+            <div class="verticle-line-breaker">
 
             </div>
 
+            <div class="container reserve-month">
+                <div class="text-center">
+
+                    <h2>Reserved Dates</h2>
+                    <p>These are the following dates which are reserved</p>
+                </div>
+                <div id='dates_list'>
+                    <select id='month' class='form-control' onchange="update_date()">
+                        <option value='01'>January</option>
+                        <option value='02'>February</option>
+                        <option value='03'>March</option>
+                        <option value='04'>April</option>
+                        <option value='05'>May</option>
+                        <option value='06'>June</option>
+                        <option value='07'>July</option>
+                        <option value='08'>August</option>
+                        <option value='09'>September</option>
+                        <option value='10'>October</option>
+                        <option value='11'>November</option>
+                        <option value='12'>December</option>
+                    </select>
+                    <!-- 
+                        <div id='dates'>
+        
+                            </div> -->
+
+                </div>
+            </div>
+
+
+            <div class="container-fluid">
+                <div class="container reservation-list">
+                    <!-- reserved List -->
+                    <table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th class="th-sm">Reserved Dates
+                                </th>
+                                <th class="th-sm">Action
+                                </th>
+
+                            </tr>
+                        </thead>
+                        <tbody id='dates'>
+
+                        </tbody>
+
+                    </table>
+                    <!-- reservation list -->
+
+
+                </div>
+            </div>
             <div class="verticle-line-breaker">
 
             </div>
@@ -322,14 +362,12 @@
                     <h6 class="text-uppercase font-weight-bold">Products</h6>
                     <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                     <p>
-                        <a href="#!">Banquet</a>
+                        <a href="/home">Banquet</a>
                     </p>
                     <p>
-                        <a href="#!">Catering</a>
+                        <a href="/catering">Catering</a>
                     </p>
-                    <p>
-                        <a href="#!">Transport</a>
-                    </p>
+
 
                 </div>
                 <!-- Grid column -->
@@ -510,18 +548,22 @@
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="../js/mdb.min.js"></script>
 <script>
-    let dates_all=[];
-    function update_date(){
+    let dates_all = [];
+    function update_date() {
         let month = document.getElementById('month').value;
-        let dates = `<ul>`;
-                        dates_all.forEach((r)=>{
-                            console.log(r.date.split("-"));
-                            if(r.date.split("-")[1]===month){
-                                dates += `<li>`+r.date+`</li>`;
-                            }
-                        });
-                        dates += `</ul>`
-                        document.getElementById('dates').innerHTML = dates;
+        let dates =
+
+            `<tr>`;
+        dates_all.forEach((r) => {
+            console.log(r.date.split("-"));
+            if (r.date.split("-")[1] === month) {
+                dates += ` <td>` + r.date + `</td> <td>Reserved</td> </tr>`
+
+                    ;
+            }
+        });
+
+        document.getElementById('dates').innerHTML = dates;
     }
     function fetch_info() {
         let id = window.location.href.substr(window.location.href.indexOf('/banquet/') + 9, 24);
@@ -550,7 +592,7 @@
                         });
                         ser += `</ul>`;
                         dates_all = JSON.parse(banq.reservations);
-                      update_date();  
+                        update_date();
 
                         document.getElementById('banq-service-list').innerHTML = ser;
 

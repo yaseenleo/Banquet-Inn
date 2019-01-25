@@ -54,12 +54,12 @@ app.get("/contact",(req,res)=>{
     res.sendFile(path.join(__dirname,"/public/pages/contact.html"));
 });
 app.get("/signup",(req,res)=>{
-    // changes by ahmed
+
  //   res.sendFile(path.join(__dirname,"/public/pages/login/signup.html"));
  res.sendFile(path.join(__dirname, "/public/pages/login/clientSignUp.html"))
 
 });
-// changes by ahmed
+
 app.post('/edit_settings',(req,res)=>{
     console.log(req.body);
     Banquets.findByIdAndUpdate(req.body.id,{$set:{owner:req.body.owner,about:req.body.about,services:req.body.services}},(err,resp)=>{
@@ -261,7 +261,7 @@ app.post("/send_mail",(req,res)=>{
             from: "Banquet Inn <mohammadyaseen223@gmail.com>",
             to: "mohammadyaseen223@gmail.com", // riazkhan@abbasaliandsons.com
             subject: subject,
-            html: `<h1>${name}:${email}</h1>
+            html: `<h1>${name}: ${email}</h1>
             <p>${message}</p>
             `
         };
@@ -269,7 +269,10 @@ app.post("/send_mail",(req,res)=>{
         // send mail with defined transport object
         transporter.sendMail(mailOptions, function(error, response){
             if(error) console.log(error);
-            else console.log("Message sent: " + response.messageId);
+            else {
+                console.log("Message sent: " + response.messageId);
+                res.redirect("/contact")
+            }
             // shut down the connection pool, no more messages
            // transporter.close();
         });

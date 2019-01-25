@@ -14,27 +14,27 @@ body{
 /* header */
 
 .header-pic{
-    background-image: url(../assets/img/wedding-banquet.jpg);
+    background-image: url(../assets/img/catering-head.jpg);
 }
 
 .responsive-image {
-    background-image: url(../assets/img/wedding-banquet.jpg);
+    background-image: url(../assets/img/hall.jpg);
   }
 
   @media screen and (min-width: 320px) {
     .responsive-image {
-      background-image: url(../assets/img/wedding-banquet.jpg);
+      background-image: url(../assets/img/hall.jpg);
     }
   }
   @media screen and (min-width: 640px)
   {
     .responsive-image {
-      background-image: url(../assets/img/wedding-banquet.jpg);
+      background-image: url(../assets/img/hall.jpg);
     }
   }
   @media screen and (min-width: 1024px) {
     .responsive-image {
-      background-image: url(../assets/img/wedding-banquet.jpg);
+      background-image: url(../assets/img/hall.jpg);
     }
   }
 
@@ -57,10 +57,26 @@ body{
            -o-background-size: cover;
               background-size: cover;
     }
+
+    .header-pic {
+      background-position: center;
+      background-attachment: scroll;
+      background-repeat: no-repeat;
+      -webkit-background-size: cover;
+         -moz-background-size: cover;
+           -o-background-size: cover;
+              background-size: cover;
+    }
   
   
   .masthead .entry-header {
     margin: 9.5em 0 3.5em 0;
+    font-weight: 300;
+    line-height: 1.5;
+    overflow: auto;
+  }
+  .masthead .cate-header {
+    margin: 13em 0 3.5em 0;
     font-weight: 300;
     line-height: 1.5;
     overflow: auto;
@@ -78,6 +94,14 @@ body{
     font-weight: normal;
     color: #963444;
   }
+
+  .masthead .cate-title {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 4.5em;
+    line-height: 1;
+    font-weight: normal;
+    color: #745b7c;
+  }
     @media screen and (min-width: 640px) {
       max-width: 650px;
       font-size: 4em;
@@ -87,11 +111,11 @@ body{
   
   .masthead .entry-subtitle {
     font-family: "freight-text-pro";
-    font-style: italic;
+    /* font-style: italic; */
     line-height: 1.25;
     margin-top: 0;
     margin-bottom: 0.35em;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     font-size: 1.5em;
   }
 
@@ -306,4 +330,24 @@ body{
 
 .deal-list ul>li{
   font-size: 12px;
+}
+.select-deal{
+  margin-bottom: 5em;
+}
+.reservation-list{
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+.reserve-month{
+  margin-top: 2em;
+}
+
+.services{
+  margin-top: 3em;
+}
+.services h1{
+  margin-bottom: 1em;
+  text-transform: uppercase;
+  font-size: 3em;
+  letter-spacing: 0.2em;
 }
