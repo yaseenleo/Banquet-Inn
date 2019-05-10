@@ -222,16 +222,18 @@ app.post('/order_catering',(req,res)=>{
         from: "Banquet Inn <mohammadyaseen223@gmail.com>",
         to: "mohammadyaseen223@gmail.com", // riazkhan@abbasaliandsons.com
         subject: 'Catering Order',
-        html: `<h1>${email}:${deal}</h1>
-        <p>${qty} ${date}</p>
+        html: `<h1>${email}</h1>
+                <p>${deal} has been Ordered</p>
+        <p>${qty} quantity of meal has been ordered on ${date}</p>
         `
     };
     var mail2 = {
         from: "Banquet Inn <mohammadyaseen223@gmail.com>",
         to: email, // riazkhan@abbasaliandsons.com
         subject: 'Your CATERING ORDER HAS BEEN PLACED',
-        html: `<h1>${email}:${deal}</h1>
-        <p>${qty} ${date}</p>
+        html: `<h1>${email}</h1>
+                <p>${deal} has been placed of ${qty} of meal on ${date}</p>
+        <h3>Thank You</h3>
         `
     };
 
